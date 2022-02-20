@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "1011930938373",
+    "project_id": "loadigo-app",
+    "storage_bucket": "loadigo-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1011930938373:android:946c7597d88d9c7dc2706c",
+        "android_client_info": {
+          "package_name": "com.mywork.loadigouser"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1011930938373-hj1b94atj6frc1af5f3kt4hoslqu5sn0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCuTkkjWarRZDNAXJc6Hd8OfkE54FXev2I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1011930938373-hj1b94atj6frc1af5f3kt4hoslqu5sn0.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1011930938373-kbe9adfdl303vf57g2cqru6lei81usd4.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.loadigo.user"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

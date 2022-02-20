@@ -3,9 +3,33 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/PS-701/AndroidStudioProjects/LoadigoUser/app/src/main/res/drawable-hdpi/bg_social.xml" value="0.14635416666666667" />
+        <entry key="..\:/Users/PS-701/AndroidStudioProjects/LoadigoUser/app/src/main/res/drawable/bg_error_large_radius.xml" value="0.14635416666666667" />
+        <entry key="..\:/Users/PS-701/AndroidStudioProjects/LoadigoUser/app/src/main/res/drawable/bg_info_large_radius.xml" value="0.14635416666666667" />
+        <entry key="..\:/Users/PS-701/AndroidStudioProjects/LoadigoUser/app/src/main/res/drawable/bg_social.xml" value="0.14635416666666667" />
+        <entry key="..\:/Users/PS-701/AndroidStudioProjects/LoadigoUser/app/src/main/res/drawable/bg_success_large_radius.xml" value="0.14635416666666667" />
+        <entry key="..\:/Users/PS-701/AndroidStudioProjects/LoadigoUser/app/src/main/res/drawable/bg_warning_large_radius.xml" value="0.14635416666666667" />
+        <entry key="..\:/Users/PS-701/AndroidStudioProjects/LoadigoUser/app/src/main/res/drawable/horizontal_discrete_line.xml" value="0.2703125" />
+        <entry key="..\:/Users/PS-701/AndroidStudioProjects/LoadigoUser/app/src/main/res/drawable/ic_correct_notification.xml" value="0.14635416666666667" />
+        <entry key="..\:/Users/PS-701/AndroidStudioProjects/LoadigoUser/app/src/main/res/drawable/ic_error_notification.xml" value="0.14635416666666667" />
+        <entry key="..\:/Users/PS-701/AndroidStudioProjects/LoadigoUser/app/src/main/res/drawable/ic_facebook.xml" value="0.2703125" />
+        <entry key="..\:/Users/PS-701/AndroidStudioProjects/LoadigoUser/app/src/main/res/drawable/ic_info_notification.xml" value="0.14635416666666667" />
+        <entry key="..\:/Users/PS-701/AndroidStudioProjects/LoadigoUser/app/src/main/res/layout/activity_auth.xml" value="0.22735507246376813" />
+        <entry key="..\:/Users/PS-701/AndroidStudioProjects/LoadigoUser/app/src/main/res/layout/activity_boarding.xml" value="0.264" />
         <entry key="..\:/Users/PS-701/AndroidStudioProjects/LoadigoUser/app/src/main/res/layout/activity_splash.xml" value="0.6" />
+        <entry key="..\:/Users/PS-701/AndroidStudioProjects/LoadigoUser/app/src/main/res/layout/fragment_complete.xml" value="0.22665457842248413" />
+        <entry key="..\:/Users/PS-701/AndroidStudioProjects/LoadigoUser/app/src/main/res/layout/fragment_login.xml" value="0.3255208333333333" />
+        <entry key="..\:/Users/PS-701/AndroidStudioProjects/LoadigoUser/app/src/main/res/layout/fragment_otp.xml" value="0.264" />
+        <entry key="..\:/Users/PS-701/AndroidStudioProjects/LoadigoUser/app/src/main/res/layout/fragment_register.xml" value="0.1421875" />
+        <entry key="..\:/Users/PS-701/AndroidStudioProjects/LoadigoUser/app/src/main/res/layout/general_loading_indicator.xml" value="0.13020833333333334" />
+        <entry key="..\:/Users/PS-701/AndroidStudioProjects/LoadigoUser/app/src/main/res/layout/item_boarding.xml" value="0.2368659420289855" />
+        <entry key="..\:/Users/PS-701/AndroidStudioProjects/LoadigoUser/app/src/main/res/layout/local_notification_layout.xml" value="0.13020833333333334" />
+        <entry key="..\:/Users/PS-701/AndroidStudioProjects/LoadigoUser/app/src/main/res/menu/bottom_navigation_menu.xml" value="0.25416666666666665" />
       </map>
     </option>
+  </component>
+  <component name="ProjectPlainTextFileTypeManager">
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/mywork/loadigouser/util/extensions/ContextExt.kt" />
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />

@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineStart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="@dimen/_20sdp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineTop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="@dimen/_20sdp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineBottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_end="@dimen/_20sdp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineEnd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="@dimen/_20sdp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineCenter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.2" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineBottomView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.876" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txtSignIn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/sf_pro_bold"
+            android:text="@string/sign_up"
+            android:textColor="@color/selected_indicator"
+            android:textSize="@dimen/_18ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/guidelineCenter"
+            app:layout_constraintVertical_bias="0.2" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/etPhone"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_40sdp"
+            android:background="@null"
+            android:inputType="phone"
+            android:maxLength="11"
+            android:drawableStart="@drawable/smartphone_call"
+            android:drawablePadding="@dimen/_8sdp"
+            android:fontFamily="@font/sf_pro_semibold"
+            android:hint="Phone Number"
+            android:paddingHorizontal="@dimen/_12sdp"
+            android:paddingVertical="@dimen/_10sdp"
+            android:textAlignment="viewStart"
+            android:textColor="@color/black"
+            android:textColorHint="@color/grey"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+            app:layout_constraintStart_toStartOf="@id/guidelineStart"
+            app:layout_constraintTop_toBottomOf="@id/txtSignIn" />
+
+        <View
+            android:id="@+id/up_divider"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_2sdp"
+            android:layout_marginHorizontal="@dimen/_12sdp"
+            android:background="@drawable/horizontal_discrete_line"
+            app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+            app:layout_constraintStart_toStartOf="@id/guidelineStart"
+            app:layout_constraintTop_toBottomOf="@id/etPhone" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/etPassword"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:background="@null"
+            android:inputType="textPassword"
+            android:drawableStart="@drawable/password"
+            android:drawablePadding="@dimen/_8sdp"
+            android:fontFamily="@font/sf_pro_semibold"
+            android:hint="Password"
+            android:paddingHorizontal="@dimen/_12sdp"
+            android:paddingVertical="@dimen/_10sdp"
+            android:textAlignment="viewStart"
+            android:textColor="@color/black"
+            android:textColorHint="@color/grey"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+            app:layout_constraintStart_toStartOf="@id/guidelineStart"
+            app:layout_constraintTop_toBottomOf="@id/etPhone" />
+
+        <View
+            android:id="@+id/up_divider2"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_2sdp"
+            android:layout_marginHorizontal="@dimen/_12sdp"
+            android:background="@drawable/horizontal_discrete_line"
+            app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+            app:layout_constraintStart_toStartOf="@id/guidelineStart"
+            app:layout_constraintTop_toBottomOf="@id/etPassword" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnSignIn"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_marginTop="@dimen/_40sdp"
+            android:fontFamily="@font/sf_pro_semibold"
+            android:text="Continue"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_12ssp"
+            app:backgroundTint="@color/bg_btn"
+            app:cornerRadius="@dimen/_8sdp"
+            app:layout_constraintEnd_toEndOf="@id/up_divider2"
+            app:layout_constraintStart_toStartOf="@id/up_divider2"
+            app:layout_constraintTop_toBottomOf="@id/up_divider2" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txt_not_have_account"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Already have an account?"
+            android:textColor="@color/grey"
+            android:textSize="@dimen/_10ssp"
+            app:layout_constraintHorizontal_bias="0.4"
+            app:layout_constraintStart_toStartOf="@id/guidelineStart"
+            app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+            app:layout_constraintTop_toTopOf="@id/btnSignUp"
+            app:layout_constraintBottom_toBottomOf="@id/btnSignUp"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnSignUp"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="@dimen/_60sdp"
+            android:layout_height="wrap_content"
+            android:text="@string/sign_in"
+            android:textColor="@color/selected_indicator"
+            android:textAllCaps="false"
+            app:rippleColor="@color/selected_indicator"
+            android:fontFamily="@font/sf_pro_semibold"
+            android:textSize="@dimen/_10ssp"
+            app:layout_constraintHorizontal_bias="0"
+            android:layout_marginBottom="@dimen/_30sdp"
+            app:layout_constraintTop_toBottomOf="@id/btnSignIn"
+            app:layout_constraintStart_toEndOf="@id/txt_not_have_account" />
+
+        <View
+            android:id="@+id/v1"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_60sdp"
+            android:background="#80EDB550"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/btnFaceBook"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/facebook_icon"
+            app:layout_constraintTop_toTopOf="@id/guidelineBottomView"
+            app:layout_constraintStart_toEndOf="@id/btnGoogle"
+            app:layout_constraintEnd_toStartOf="@id/btnTwitter"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/btnGoogle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/google_plus_icon"
+            app:layout_constraintEnd_toStartOf="@id/btnFaceBook"
+            app:layout_constraintTop_toTopOf="@id/guidelineBottomView"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/btnTwitter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/twitter_icon"
+            app:layout_constraintTop_toTopOf="@id/guidelineBottomView"
+            app:layout_constraintStart_toEndOf="@id/btnFaceBook"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

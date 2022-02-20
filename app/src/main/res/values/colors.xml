@@ -3,4 +3,17 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="main_blue">#1A77B5</color>
+    <color name="color_unselected_indicator">#80192965</color>
+    <color name="selected_indicator">#192965</color>
+    <color name="bg_screens">#FBFBFB</color>
+    <color name="bg_btn">#EDB550</color>
+    <color name="bg_btn_blue">#1A77B5</color>
+    <color name="grey">#BBBBBB</color>
+
+    <color name="defaultTextColor">#FFFFFF</color>
+    <color name="errorColor">#E60019</color>
+    <color name="infoColor">#2A009E</color>
+    <color name="successColor">#27A821</color>
+    <color name="warningColor">#F36A10</color>
+    <color name="normalColor">#353A3E</color>
 </resources>

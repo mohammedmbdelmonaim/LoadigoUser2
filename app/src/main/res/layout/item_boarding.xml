@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.mywork.loadigouser.util.ImageType" />
+        <variable
+            name="boardingItem"
+            type="com.mywork.loadigouser.model.locale.BoardingItem" />
+    </data>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1.5">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+           android:layout_marginHorizontal="@dimen/_40sdp"
+            android:layout_marginBottom="@dimen/_40sdp"
+            android:scaleType="centerInside"
+            android:src="@drawable/onboard1"
+            app:bind_image="@{boardingItem.imageResource}"
+            app:image_type="@{ImageType.PURE_PATH}"/>
+        </FrameLayout>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_25sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_marginEnd="@dimen/_25sdp"
+                android:lines="1"
+                android:text="@{boardingItem.headerText}"
+                android:textSize="@dimen/_12ssp"
+                android:fontFamily="@font/sf_pro_bold"
+                android:textAlignment="center"
+                android:textColor="@color/colorPrimary"
+                android:textStyle="bold"
+                tools:text="Hello Title" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_25sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:text="@{boardingItem.bodyText}"
+                android:layout_marginEnd="@dimen/_25sdp"
+                android:textSize="@dimen/_12ssp"
+                android:fontFamily="@font/sf_pro_bold"
+                android:lines="4"
+                android:textAlignment="center"
+                tools:text="Hello subtitle" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</layout>

@@ -6,8 +6,10 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.akexorcist.localizationactivity.core.LocalizationActivityDelegate
 import com.akexorcist.localizationactivity.core.OnLocaleChangedListener
+import dagger.hilt.android.AndroidEntryPoint
 import java.util.*
 
+@AndroidEntryPoint
 open class BaseActivity: AppCompatActivity(), OnLocaleChangedListener {
     private val localizationDelegate by lazy { LocalizationActivityDelegate(this) }
 

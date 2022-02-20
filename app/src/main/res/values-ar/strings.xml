@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">LoadigoUser</string>
+    <string name="onboarding_title_1">اختر وجهة</string>
+    <string name="onboarding_desc_1">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut "</string>
+    <string name="onboarding_title_2">قم بالدفع</string>
+    <string name="onboarding_desc_2">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut "</string>
+    <string name="onboarding_desc_3">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut "</string>
+    <string name="onboarding_title_3">توصيل</string>
+    <string name="next">التالي</string>
+    <string name="sign_up">اشتراك</string>
+    <string name="sign_in">تسجيل الدخول</string>
+    <string name="skip">تخطي</string>
+    <string name="no_internet_connection" />
+    <string name="please_fill_the_phone">phone is required</string>
+    <string name="password_is_required">password is required</string>
+    <string name="invalid_phone_number">invalid phone number</string>
+    <string name="fullname_is_required">fullname is reuired</string>
+    <string name="email_is_required">email is required</string>
+    <string name="email_not_valid">Enter valid E-mail</string>
+</resources>

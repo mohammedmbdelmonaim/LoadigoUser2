@@ -20,9 +20,15 @@
         android:usesCleartextTraffic="true">
         <activity
             android:name=".ui.boarding.OnBoardingActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/Theme.LoadigoUserCustom"/>
+
         <activity
             android:name=".ui.auth.AuthActivity"
+            android:exported="false"
+            android:theme="@style/Theme.LoadigoUserCustom" />
+        <activity
+            android:name=".ui.splash.SplashActivity"
             android:exported="true"
             android:screenOrientation="portrait">
             <intent-filter>
