@@ -54,6 +54,10 @@ class OtpFragment : BaseFragment() {
 //                lifecycleScope.launch { viewModel.registerUser(LoginRequest(mobileNumber, password)) }
 //            }
 //        }
+
+        binding.btnContinue.setOnClickListener {
+            navController.navigate(R.id.action_otpFragment_to_completeFragment)
+        }
     }
 
     private fun observeLiveData() {

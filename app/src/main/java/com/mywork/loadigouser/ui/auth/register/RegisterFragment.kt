@@ -46,12 +46,17 @@ class RegisterFragment : BaseFragment() {
     }
 
     private fun handleClicks() {
+        binding.btnContinue.setOnClickListener {
+//            val mobileNumber = binding.etPhone.text.toString()
+//            val password = binding.etPassword.text.toString()
+//            if (checkValidation(mobileNumber, password)) {
+//                lifecycleScope.launch { viewModel.registerUser(LoginRequest(mobileNumber, password)) }
+//            }
+            navController.navigate(R.id.action_registerFragment_to_otpFragment)
+        }
+
         binding.btnSignIn.setOnClickListener {
-            val mobileNumber = binding.etPhone.text.toString()
-            val password = binding.etPassword.text.toString()
-            if (checkValidation(mobileNumber, password)) {
-                lifecycleScope.launch { viewModel.registerUser(LoginRequest(mobileNumber, password)) }
-            }
+            navController.navigate(R.id.action_registerFragment_to_loginFragment)
         }
     }
 

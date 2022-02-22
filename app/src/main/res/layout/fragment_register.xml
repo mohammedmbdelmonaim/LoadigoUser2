@@ -129,12 +129,12 @@
             app:layout_constraintTop_toBottomOf="@id/etPassword" />
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnSignIn"
+            android:id="@+id/btnContinue"
             android:layout_width="0dp"
             android:layout_height="@dimen/_40sdp"
             android:layout_marginTop="@dimen/_40sdp"
             android:fontFamily="@font/sf_pro_semibold"
-            android:text="Continue"
+            android:text="@string/continue_1"
             android:textAllCaps="false"
             android:textColor="@color/white"
             android:textSize="@dimen/_12ssp"
@@ -148,17 +148,17 @@
             android:id="@+id/txt_not_have_account"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Already have an account?"
+            android:text="@string/already_have_an_account"
             android:textColor="@color/grey"
             android:textSize="@dimen/_10ssp"
             app:layout_constraintHorizontal_bias="0.4"
             app:layout_constraintStart_toStartOf="@id/guidelineStart"
             app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
-            app:layout_constraintTop_toTopOf="@id/btnSignUp"
-            app:layout_constraintBottom_toBottomOf="@id/btnSignUp"/>
+            app:layout_constraintTop_toTopOf="@id/btnSignIn"
+            app:layout_constraintBottom_toBottomOf="@id/btnSignIn"/>
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnSignUp"
+            android:id="@+id/btnSignIn"
             style="@style/Widget.MaterialComponents.Button.TextButton"
             android:layout_width="@dimen/_60sdp"
             android:layout_height="wrap_content"
@@ -170,7 +170,7 @@
             android:textSize="@dimen/_10ssp"
             app:layout_constraintHorizontal_bias="0"
             android:layout_marginBottom="@dimen/_30sdp"
-            app:layout_constraintTop_toBottomOf="@id/btnSignIn"
+            app:layout_constraintTop_toBottomOf="@id/btnContinue"
             app:layout_constraintStart_toEndOf="@id/txt_not_have_account" />
 
         <View

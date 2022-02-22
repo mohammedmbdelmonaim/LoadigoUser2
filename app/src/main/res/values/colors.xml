@@ -16,4 +16,6 @@
     <color name="successColor">#27A821</color>
     <color name="warningColor">#F36A10</color>
     <color name="normalColor">#353A3E</color>
+    <color name="bottom_unSelected">#DADADA</color>
+    <color name="txt_color">#31336C</color>
 </resources>

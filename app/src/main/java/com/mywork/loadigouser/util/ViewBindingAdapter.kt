@@ -33,6 +33,7 @@ object ViewBindingAdapter {
                 ImageType.COUNTRY -> "https://www.countryflags.io/$path/shiny/64.png"
                 ImageType.PURE_PATH -> path
                 ImageType.CATEGORY -> {
+                    path
 //                    if (SharedCodeConfiguration.isDebug) {
 //                        "${SharedCodeConfiguration.url}CMS2/$path"
 //                    } else {

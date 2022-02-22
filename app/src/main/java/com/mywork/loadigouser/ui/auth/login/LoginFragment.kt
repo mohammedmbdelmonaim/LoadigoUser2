@@ -1,5 +1,6 @@
 package com.mywork.loadigouser.ui.auth.login
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -13,6 +14,7 @@ import com.mywork.loadigouser.R
 import com.mywork.loadigouser.base.BaseFragment
 import com.mywork.loadigouser.databinding.FragmentLoginBinding
 import com.mywork.loadigouser.model.remote.request.auth.LoginRequest
+import com.mywork.loadigouser.ui.user.UserActivity
 import com.mywork.loadigouser.util.LocalNotificationType
 import com.mywork.loadigouser.util.Resource
 import dagger.hilt.android.AndroidEntryPoint
@@ -50,8 +52,14 @@ class LoginFragment : BaseFragment() {
             val mobileNumber = binding.etPhone.text.toString()
             val password = binding.etPassword.text.toString()
             if (checkValidation(mobileNumber, password)) {
-                lifecycleScope.launch { viewModel.loginUser(LoginRequest(mobileNumber, password)) }
+                startActivity(Intent(requireContext() , UserActivity::class.java))
+                requireActivity().finish()
+//                lifecycleScope.launch { viewModel.loginUser(LoginRequest(mobileNumber, password)) }
             }
+        }
+
+        binding.btnSignUp.setOnClickListener {
+            navController.navigate(R.id.action_loginFragment_to_registerFragment)
         }
     }
 

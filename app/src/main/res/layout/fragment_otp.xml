@@ -9,7 +9,8 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/bg_screens">
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guidelineStart"
@@ -59,8 +60,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:fontFamily="@font/sf_pro_semibold"
-            android:text="We have sent OTP on your register
-mobile Number"
+            android:text="@string/we_have_sent_otp_on_your_register_mobile_number"
             android:layout_marginBottom="@dimen/_50sdp"
             android:textSize="@dimen/_18ssp"
             android:textColor="@color/white"
@@ -76,7 +76,7 @@ mobile Number"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/_8sdp"
             android:fontFamily="@font/sf_pro_bold"
-            android:text="Verification"
+            android:text="@string/verification"
             android:textAlignment="center"
             android:textColor="@color/white"
             android:textSize="@dimen/_18ssp"
@@ -94,10 +94,10 @@ mobile Number"
             android:layout_marginVertical="@dimen/_16sdp"
             android:cursorVisible="true"
             android:inputType="number"
-            android:itemBackground="@drawable/bg_otp2"
-            android:padding="@dimen/_8sdp"
-            android:textColor="@color/white"
-            android:textColorHint="@color/white"
+            android:gravity="center"
+            android:itemBackground="@drawable/bg_otp"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
             android:textSize="@dimen/_16ssp"
             android:textStyle="bold"
             app:cursorColor="@color/white"
@@ -105,7 +105,7 @@ mobile Number"
             app:hideLineWhenFilled="true"
             app:itemCount="4"
             app:itemHeight="@dimen/_50sdp"
-            app:itemRadius="4dp"
+
             app:itemSpacing="@dimen/_8sdp"
             app:itemWidth="@dimen/_55sdp"
             app:layout_constraintBottom_toBottomOf="@id/guidelineBottom"
@@ -113,11 +113,12 @@ mobile Number"
             app:layout_constraintStart_toStartOf="@id/guidelineStart"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.46"
-            app:lineColor="@color/grey"
-            app:lineWidth="1dp"
+            app:lineWidth="0dp"
+            app:lineColor="#fff"
             app:viewType="rectangle" />
 
         <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvTimer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="@dimen/_16ssp"
@@ -129,6 +130,79 @@ mobile Number"
             app:layout_constraintStart_toStartOf="@id/guidelineStart"
             app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
             app:layout_constraintBottom_toBottomOf="@id/guidelineBottom" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnContinue"
+            android:layout_width="wrap_content"
+            android:paddingHorizontal="@dimen/_40sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_marginTop="@dimen/_40sdp"
+            android:fontFamily="@font/sf_pro_semibold"
+            android:text="@string/continue_1"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_12ssp"
+            app:backgroundTint="@color/bg_btn"
+            app:cornerRadius="@dimen/_8sdp"
+            app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+            app:layout_constraintStart_toStartOf="@id/guidelineStart"
+            app:layout_constraintTop_toBottomOf="@id/tvTimer" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txt_not_have_account"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/don_t_receive_otp"
+            android:textColor="@color/grey"
+            android:textSize="@dimen/_10ssp"
+            app:layout_constraintHorizontal_bias="0.24"
+            app:layout_constraintStart_toStartOf="@id/guidelineStart"
+            app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+            app:layout_constraintTop_toTopOf="@id/btnResend"
+            app:layout_constraintBottom_toBottomOf="@id/btnResend"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnResend"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/resend_again"
+            android:textColor="@color/selected_indicator"
+            android:textAllCaps="false"
+            app:rippleColor="@color/selected_indicator"
+            android:fontFamily="@font/sf_pro_semibold"
+            android:textSize="@dimen/_10ssp"
+            app:layout_constraintHorizontal_bias="0"
+            android:layout_marginBottom="@dimen/_30sdp"
+            app:layout_constraintTop_toBottomOf="@id/btnContinue"
+            app:layout_constraintStart_toEndOf="@id/txt_not_have_account" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txtOr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/or"
+            android:textColor="@color/grey"
+            android:textSize="@dimen/_10ssp"
+            android:layout_marginTop="@dimen/_12sdp"
+            app:layout_constraintStart_toStartOf="@id/guidelineStart"
+            app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+            app:layout_constraintTop_toBottomOf="@id/btnResend" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnContact"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/sf_pro_semibold"
+            android:text="@string/contact_us"
+            android:textAllCaps="false"
+            android:textColor="@color/selected_indicator"
+            android:textSize="@dimen/_10ssp"
+            app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
+            app:layout_constraintStart_toStartOf="@+id/guidelineStart"
+            app:layout_constraintTop_toBottomOf="@id/txtOr"
+            app:rippleColor="@color/selected_indicator" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

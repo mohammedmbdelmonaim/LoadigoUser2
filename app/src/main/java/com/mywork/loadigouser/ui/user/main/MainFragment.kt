@@ -1,8 +1,6 @@
-package com.mywork.loadigouser.ui.auth.complete
+package com.mywork.loadigouser.ui.user.main
 
-import android.content.Intent
 import android.os.Bundle
-import android.util.Patterns
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -13,24 +11,26 @@ import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.mywork.loadigouser.R
 import com.mywork.loadigouser.base.BaseFragment
-import com.mywork.loadigouser.databinding.FragmentCompleteBinding
-import com.mywork.loadigouser.databinding.FragmentLoginBinding
-import com.mywork.loadigouser.model.remote.request.auth.CompleteRequest
+import com.mywork.loadigouser.databinding.FragmentMainBinding
+import com.mywork.loadigouser.databinding.FragmentRegisterBinding
 import com.mywork.loadigouser.model.remote.request.auth.LoginRequest
-import com.mywork.loadigouser.ui.boarding.OnBoardingActivity
-import com.mywork.loadigouser.ui.user.UserActivity
+import com.mywork.loadigouser.model.remote.response.user.ServiceResponse
 import com.mywork.loadigouser.util.LocalNotificationType
 import com.mywork.loadigouser.util.Resource
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
 @AndroidEntryPoint
-class CompleteFragment : BaseFragment() {
-    private var _binding: FragmentCompleteBinding? = null
+class MainFragment : BaseFragment() {
+    private var _binding: FragmentMainBinding? = null
     private val binding get() = _binding!!
 
     private lateinit var navController: NavController
-    private val viewModel: CompleteViewModel by viewModels()
+    private val viewModel: MainViewModel by viewModels()
+
+    @Inject
+    lateinit var adapter: ServicesAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -38,7 +38,7 @@ class CompleteFragment : BaseFragment() {
         savedInstanceState: Bundle?
     ): View? {
         _binding =
-            DataBindingUtil.inflate(layoutInflater, R.layout.fragment_complete, container, false)
+            DataBindingUtil.inflate(layoutInflater, R.layout.fragment_main, container, false)
         return binding.root
     }
 
@@ -46,20 +46,22 @@ class CompleteFragment : BaseFragment() {
         super.onViewCreated(view, savedInstanceState)
         navController = Navigation.findNavController(view)
         binding.lifecycleOwner = this
-
+        binding.adapter = adapter
         observeLiveData()
         handleClicks()
     }
 
     private fun handleClicks() {
-       binding.btnFinish.setOnClickListener {
-           startActivity(Intent(requireContext() , UserActivity::class.java))
-           requireActivity().finish()
-       }
+        val services = mutableListOf<ServiceResponse>()
+        services.add(ServiceResponse(1,"Fuel" ))
+        services.add(ServiceResponse(2,"Tow Truck" ))
+        services.add(ServiceResponse(3,"Courier" ))
+        services.add(ServiceResponse(4,"Buy" ))
+        adapter.submitList(services)
     }
 
     private fun observeLiveData() {
-        viewModel.completeLiveData.observe(viewLifecycleOwner) { response ->
+        viewModel.loginLiveData.observe(viewLifecycleOwner) { response ->
             when (response) {
                 is Resource.Loading -> {
                     showLoadingIndicator()
@@ -82,24 +84,5 @@ class CompleteFragment : BaseFragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
-    }
-
-    private fun checkValidation(fullName: String, email: String): Boolean {
-        if (fullName.isNullOrEmpty()) {
-            binding.etFullName.error = getString(R.string.fullname_is_required)
-            return false
-        }
-
-        if (email.isNullOrEmpty()) {
-            binding.etEmail.error = getString(R.string.email_is_required)
-            return false
-        }
-
-        if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-            binding.etEmail.error = getString(R.string.email_not_valid)
-            return false
-        }
-
-        return true
     }
 }
