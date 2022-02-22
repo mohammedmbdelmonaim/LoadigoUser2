@@ -6,8 +6,8 @@
         <layer-list>
             <item>
                 <shape android:shape="rectangle">
-                    <solid android:color="#F36A10" />
-                    <corners android:radius="@dimen/_12sdp" />
+                    <solid android:color="@color/white"/>
+                    <corners android:radius="@dimen/_8sdp"/>
                 </shape>
             </item>
             <item android:drawable="@drawable/ic_edit_text_cursor" android:gravity="center" />
@@ -16,24 +16,24 @@
     <!-- Space contains text -->
     <item android:state_checked="true" android:state_focused="true">
         <shape android:shape="rectangle">
-            <solid android:color="#F36A10" />
-            <corners android:radius="@dimen/_12sdp" />
+            <solid android:color="@color/white"/>
+            <corners android:radius="@dimen/_8sdp"/>
         </shape>
     </item>
 
     <!-- PinEntryEditText is focused -->
     <item android:state_focused="true">
         <shape android:shape="rectangle">
-            <solid android:color="#F36A10" />
-            <corners android:radius="@dimen/_12sdp" />
+            <solid android:color="@color/white"/>
+            <corners android:radius="@dimen/_8sdp"/>
         </shape>
     </item>
 
     <!-- PinEntryEditText is not focused -->
     <item>
         <shape android:shape="rectangle">
-            <solid android:color="#F36A10" />
-            <corners android:radius="@dimen/_12sdp" />
+            <solid android:color="@color/white" />
+            <corners android:radius="@dimen/_8sdp" />
         </shape>
     </item>
 </selector>
