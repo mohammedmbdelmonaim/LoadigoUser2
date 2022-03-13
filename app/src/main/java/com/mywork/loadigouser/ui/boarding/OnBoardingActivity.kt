@@ -76,7 +76,7 @@ class OnBoardingActivity : BaseActivity() {
                                 this@OnBoardingActivity,
                                 AuthActivity::class.java
                             )
-                            intent.putExtra("isSign", true)
+                            intent.putExtra("isSignUp", false)
                             startActivity(intent)
                             finish()
                         }
@@ -91,7 +91,7 @@ class OnBoardingActivity : BaseActivity() {
                                     this@OnBoardingActivity,
                                     AuthActivity::class.java
                                 )
-                                intent.putExtra("isSign", false)
+                                intent.putExtra("isSignUp", true)
                                 startActivity(intent)
                                 finish()
                             }

@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineStart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="@dimen/_20sdp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineTop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="@dimen/_20sdp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineBottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_end="@dimen/_20sdp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineEnd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="@dimen/_20sdp" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/user_imageView"
+            android:layout_width="@dimen/_100sdp"
+            android:layout_height="@dimen/_100sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:src="@mipmap/ic_launcher"
+            app:civ_border_color="@color/white"
+            app:civ_border_width="@dimen/_2sdp"
+            app:layout_constraintStart_toStartOf="@id/guidelineStart"
+            app:layout_constraintTop_toTopOf="@id/guidelineTop"/>
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/iv_change_image"
+            android:layout_width="@dimen/_24sdp"
+            android:layout_height="@dimen/_24sdp"
+            android:layout_margin="@dimen/_4sdp"
+            android:src="@drawable/vc_camera"
+            app:civ_border_color="#FFFFFF"
+            app:civ_border_width="@dimen/_1sdp"
+            app:layout_constraintBottom_toBottomOf="@+id/user_imageView"
+            app:layout_constraintEnd_toEndOf="@+id/user_imageView" />
+
+    <TextView
+        android:id="@+id/tvName"
+        android:layout_width="@dimen/_80sdp"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/_11ssp"
+        android:textColor="@color/main_blue"
+        tools:text="Sherif Atef"
+        android:fontFamily="@font/sf_pro_bold"
+        android:layout_marginStart="@dimen/_25sdp"
+        app:layout_constraintTop_toTopOf="@id/user_imageView"
+        app:layout_constraintBottom_toTopOf="@id/tvEmail"
+        app:layout_constraintStart_toEndOf="@id/user_imageView"/>
+
+        <TextView
+            android:id="@+id/tvEmail"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/_9ssp"
+            android:textColor="@color/main_blue"
+            tools:text="sherif3atef@gmail.com"
+            android:fontFamily="@font/sf_pro_regular"
+            app:layout_constraintBottom_toTopOf="@id/tvPhone"
+            app:layout_constraintTop_toBottomOf="@id/tvName"
+            app:layout_constraintStart_toStartOf="@id/tvName"
+            app:layout_constraintEnd_toEndOf="@id/guidelineEnd"/>
+
+        <TextView
+            android:id="@+id/tvPhone"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/_9ssp"
+            android:textColor="@color/main_blue"
+            tools:text="+20 110 112 0511"
+            android:fontFamily="@font/sf_pro_regular"
+            app:layout_constraintBottom_toTopOf="@id/tvVerify"
+            app:layout_constraintTop_toBottomOf="@id/tvEmail"
+            app:layout_constraintStart_toStartOf="@id/tvName"
+            app:layout_constraintEnd_toEndOf="@id/guidelineEnd"/>
+
+
+        <TextView
+            android:id="@+id/tvVerify"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/_9ssp"
+            android:textColor="@color/white"
+            tools:text="Verified"
+            android:background="@drawable/bg_verify"
+            android:fontFamily="@font/sf_pro_regular"
+            app:layout_constraintBottom_toBottomOf="@id/user_imageView"
+            app:layout_constraintTop_toBottomOf="@id/tvPhone"
+            app:layout_constraintStart_toStartOf="@id/tvName" />
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnBell"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/Widget.App.Button.OutlinedButton.IconOnly"
+            app:icon="@drawable/ic_edit"
+            app:layout_constraintStart_toEndOf="@id/tvName"
+            app:rippleColor="@color/black"
+            android:layout_marginStart="@dimen/_8sdp"
+            app:layout_constraintBottom_toBottomOf="@id/tvName"
+            app:layout_constraintTop_toTopOf="@id/tvName"
+            app:iconTint="@color/main_blue"
+            app:strokeWidth="0dp"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imgHistory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_order_history"
+            app:layout_constraintStart_toStartOf="@id/guidelineStart"
+            app:layout_constraintTop_toBottomOf="@id/user_imageView"
+            android:layout_marginTop="@dimen/_40sdp"/>
+
+        <Button
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:textAlignment="viewStart"
+            android:textAllCaps="false"
+            android:id="@+id/tvOrderHistory"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/_11ssp"
+            android:textColor="@color/main_blue"
+            android:text="@string/order_history"
+            android:fontFamily="@font/sf_pro_semibold"
+            android:paddingStart="@dimen/_25sdp"
+            app:layout_constraintTop_toTopOf="@id/imgHistory"
+            app:layout_constraintBottom_toBottomOf="@id/imgHistory"
+            app:layout_constraintStart_toEndOf="@id/imgHistory"
+            app:layout_constraintEnd_toEndOf="@id/guidelineEnd"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imgDeliveryAddresses"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_icon_ionic_md_bookmarks"
+            app:layout_constraintStart_toStartOf="@id/guidelineStart"
+            app:layout_constraintTop_toBottomOf="@id/imgHistory"
+            android:layout_marginTop="@dimen/_20sdp"/>
+
+        <Button
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:textAlignment="viewStart"
+            android:textAllCaps="false"
+            android:id="@+id/tvDeliveryAddresses"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/_11ssp"
+            android:textColor="@color/main_blue"
+            android:text="@string/delivery_addresses"
+            android:fontFamily="@font/sf_pro_semibold"
+            android:paddingStart="@dimen/_25sdp"
+            app:layout_constraintTop_toTopOf="@id/imgDeliveryAddresses"
+            app:layout_constraintBottom_toBottomOf="@id/imgDeliveryAddresses"
+            app:layout_constraintStart_toEndOf="@id/imgDeliveryAddresses"
+            app:layout_constraintEnd_toEndOf="@id/guidelineEnd"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imgNotifications"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_bell"
+            android:tint="@color/main_blue"
+            app:layout_constraintStart_toStartOf="@id/guidelineStart"
+            app:layout_constraintTop_toBottomOf="@id/imgDeliveryAddresses"
+            android:layout_marginTop="@dimen/_20sdp"/>
+
+        <Button
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:textAlignment="viewStart"
+            android:textAllCaps="false"
+            android:id="@+id/tvNotifications"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/_11ssp"
+            android:textColor="@color/main_blue"
+            android:text="@string/notifications"
+            android:fontFamily="@font/sf_pro_semibold"
+            android:paddingStart="@dimen/_25sdp"
+            app:layout_constraintTop_toTopOf="@id/imgNotifications"
+            app:layout_constraintBottom_toBottomOf="@id/imgNotifications"
+            app:layout_constraintStart_toEndOf="@id/imgNotifications"
+            app:layout_constraintEnd_toEndOf="@id/guidelineEnd"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imgHelp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_icon_material_help"
+            android:tint="@color/main_blue"
+            app:layout_constraintStart_toStartOf="@id/guidelineStart"
+            app:layout_constraintTop_toBottomOf="@id/imgNotifications"
+            android:layout_marginTop="@dimen/_20sdp"/>
+
+        <Button
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:textAlignment="viewStart"
+            android:textAllCaps="false"
+            android:id="@+id/tvHelp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/_11ssp"
+            android:textColor="@color/main_blue"
+            android:text="@string/help"
+            android:fontFamily="@font/sf_pro_semibold"
+            android:paddingStart="@dimen/_25sdp"
+            app:layout_constraintTop_toTopOf="@id/imgHelp"
+            app:layout_constraintBottom_toBottomOf="@id/imgHelp"
+            app:layout_constraintStart_toEndOf="@id/imgHelp"
+            app:layout_constraintEnd_toEndOf="@id/guidelineEnd"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imgLanguage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_icon_material_language"
+            android:tint="@color/main_blue"
+            app:layout_constraintStart_toStartOf="@id/guidelineStart"
+            app:layout_constraintTop_toBottomOf="@id/imgHelp"
+            android:layout_marginTop="@dimen/_20sdp"/>
+
+        <Button
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:textAlignment="viewStart"
+            android:textAllCaps="false"
+            android:id="@+id/tvLanguage"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/_11ssp"
+            android:textColor="@color/main_blue"
+            tools:text="English"
+            android:fontFamily="@font/sf_pro_semibold"
+            android:paddingStart="@dimen/_25sdp"
+            app:layout_constraintTop_toTopOf="@id/imgLanguage"
+            app:layout_constraintBottom_toBottomOf="@id/imgLanguage"
+            app:layout_constraintStart_toEndOf="@id/imgLanguage"
+            app:layout_constraintEnd_toEndOf="@id/guidelineEnd"/>
+
+
+        <Button
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:textAlignment="viewStart"
+            android:textAllCaps="false"
+            android:id="@+id/tvBecome"
+            android:layout_width="0dp"
+            android:layout_marginTop="@dimen/_40sdp"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/_11ssp"
+            android:textColor="@color/main_blue"
+            android:text="@string/become_a_captain"
+            android:fontFamily="@font/sf_pro_semibold"
+            app:layout_constraintTop_toBottomOf="@id/tvLanguage"
+            app:layout_constraintStart_toStartOf="@id/guidelineStart"
+            app:layout_constraintEnd_toEndOf="@id/guidelineEnd"/>
+
+        <Button
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:textAlignment="viewStart"
+            android:textAllCaps="false"
+            android:id="@+id/tvRate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/_11ssp"
+            android:textColor="@color/main_blue"
+            android:text="@string/rate_the_app"
+            android:fontFamily="@font/sf_pro_semibold"
+            app:layout_constraintTop_toBottomOf="@id/tvBecome"
+            app:layout_constraintStart_toStartOf="@id/guidelineStart"
+            app:layout_constraintEnd_toEndOf="@id/guidelineEnd"/>
+
+        <Button
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:textAlignment="viewStart"
+            android:textAllCaps="false"
+            android:id="@+id/tvAbout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/_11ssp"
+            android:textColor="@color/main_blue"
+            android:text="@string/about_the_app"
+            android:fontFamily="@font/sf_pro_semibold"
+            app:layout_constraintTop_toBottomOf="@id/tvRate"
+            app:layout_constraintStart_toStartOf="@id/guidelineStart"
+            app:layout_constraintEnd_toEndOf="@id/guidelineEnd"/>
+
+        <Button
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:textAlignment="viewStart"
+            android:textAllCaps="false"
+            android:id="@+id/tvContact"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/_11ssp"
+            android:textColor="@color/main_blue"
+            android:text="@string/contact_us"
+            android:fontFamily="@font/sf_pro_semibold"
+            app:layout_constraintTop_toBottomOf="@id/tvAbout"
+            app:layout_constraintStart_toStartOf="@id/guidelineStart"
+            app:layout_constraintEnd_toEndOf="@id/guidelineEnd"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imgLogout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_icon_feather_log_out"
+            android:tint="@color/main_blue"
+            app:layout_constraintStart_toStartOf="@id/guidelineStart"
+            app:layout_constraintTop_toBottomOf="@id/tvContact"
+            android:layout_marginBottom="@dimen/_20sdp"
+            app:layout_constraintBottom_toBottomOf="@id/guidelineBottom"
+            android:layout_marginTop="@dimen/_40sdp"/>
+
+        <Button
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:textAlignment="viewStart"
+            android:textAllCaps="false"
+            android:id="@+id/tvLogout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/_11ssp"
+            android:textColor="@color/main_blue"
+            android:text="@string/sign_out"
+            android:fontFamily="@font/sf_pro_semibold"
+            android:paddingStart="@dimen/_25sdp"
+            app:layout_constraintTop_toTopOf="@id/imgLogout"
+            app:layout_constraintBottom_toBottomOf="@id/imgLogout"
+            app:layout_constraintStart_toEndOf="@id/imgLogout"
+            app:layout_constraintEnd_toEndOf="@id/guidelineEnd"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>

@@ -35,4 +35,22 @@
     <string name="phone_number">Phone Number</string>
     <string name="password">Password</string>
     <string name="choose_your_service">Choose your service</string>
+    <string name="insert_correct_otp">Please insert correct otp</string>
+    <string name="sec_left">%s Sec Left</string>
+    <string name="permission_string">هذه الصلاحية يجب تفعيلها</string>
+    <string name="birthdate">BirthDate</string>
+    <string name="enter_birth">Enter Your BirthDate</string>
+    <string name="chose_your_profile">Choose Your Profile Photo</string>
+    <string name="select_package_or_service_type">Select Package or Service Type</string>
+    <string name="home">Home</string>
+    <string name="categories">Categories</string>
+    <string name="order_history">Order History</string>
+    <string name="delivery_addresses">Delivery Addresses</string>
+    <string name="notifications">Notifications</string>
+    <string name="help">Help</string>
+    <string name="become_a_captain">Become a captain</string>
+    <string name="rate_the_app">Rate the app</string>
+    <string name="about_the_app">About the app</string>
+    <string name="contact_us">Contact Us</string>
+    <string name="sign_out">Sign Out</string>
 </resources>

@@ -7,7 +7,7 @@
         <import type="com.mywork.loadigouser.util.ImageType" />
         <variable
             name="service"
-            type="com.mywork.loadigouser.model.remote.response.user.ServiceResponse" />
+            type="com.mywork.loadigouser.model.remote.response.user.Service" />
     </data>
 
     <com.google.android.material.card.MaterialCardView
@@ -34,21 +34,19 @@
                 android:id="@+id/tvService"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_12sdp"
                 android:fontFamily="@font/sf_pro_bold"
                 android:text="@{service.name}"
                 android:textColor="@color/white"
-                android:textSize="@dimen/_12ssp" />
+                android:textSize="@dimen/_10ssp" />
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/imgService"
-                android:layout_width="@dimen/_80sdp"
-                android:layout_height="@dimen/_90sdp"
+                android:layout_width="@dimen/_70sdp"
+                android:layout_height="@dimen/_70sdp"
                 android:scaleType="fitCenter"
+                android:layout_marginTop="@dimen/_8sdp"
                 app:bind_image="@{service.image_url}"
                 app:image_type="@{ImageType.CATEGORY}"
-                android:layout_marginTop="@dimen/_8sdp"
-                android:layout_marginBottom="@dimen/_8sdp"
                 tools:src="@drawable/fuel" />
         </androidx.appcompat.widget.LinearLayoutCompat>
     </com.google.android.material.card.MaterialCardView>

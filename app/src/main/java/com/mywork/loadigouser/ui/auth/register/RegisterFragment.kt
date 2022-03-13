@@ -13,6 +13,7 @@ import com.mywork.loadigouser.R
 import com.mywork.loadigouser.base.BaseFragment
 import com.mywork.loadigouser.databinding.FragmentRegisterBinding
 import com.mywork.loadigouser.model.remote.request.auth.LoginRequest
+import com.mywork.loadigouser.model.remote.request.auth.RegisterRequest
 import com.mywork.loadigouser.util.LocalNotificationType
 import com.mywork.loadigouser.util.Resource
 import dagger.hilt.android.AndroidEntryPoint
@@ -47,12 +48,11 @@ class RegisterFragment : BaseFragment() {
 
     private fun handleClicks() {
         binding.btnContinue.setOnClickListener {
-//            val mobileNumber = binding.etPhone.text.toString()
-//            val password = binding.etPassword.text.toString()
-//            if (checkValidation(mobileNumber, password)) {
-//                lifecycleScope.launch { viewModel.registerUser(LoginRequest(mobileNumber, password)) }
-//            }
-            navController.navigate(R.id.action_registerFragment_to_otpFragment)
+            val mobileNumber = binding.etPhone.text.toString()
+            val password = binding.etPassword.text.toString()
+            if (checkValidation(mobileNumber, password)) {
+                lifecycleScope.launch { viewModel.registerUser(RegisterRequest(mobileNumber, password)) }
+            }
         }
 
         binding.btnSignIn.setOnClickListener {
@@ -61,13 +61,18 @@ class RegisterFragment : BaseFragment() {
     }
 
     private fun observeLiveData() {
-        viewModel.loginLiveData.observe(viewLifecycleOwner) { response ->
+        viewModel.registerLiveData.observe(viewLifecycleOwner) { response ->
             when (response) {
                 is Resource.Loading -> {
                     showLoadingIndicator()
                 }
                 is Resource.Success -> {
                     hideLoadingIndicator()
+                    showLocalNotification(
+                        LocalNotificationType.SUCCESS, response.message.toString()
+                    )
+                    val action = RegisterFragmentDirections.actionRegisterFragmentToOtpFragment(binding.etPhone.text.toString())
+                    navController.navigate(action)
                 }
 
                 is Resource.Error -> {

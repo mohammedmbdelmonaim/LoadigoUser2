@@ -1,5 +1,6 @@
 package com.mywork.loadigouser.ui.auth.login
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -52,9 +53,7 @@ class LoginFragment : BaseFragment() {
             val mobileNumber = binding.etPhone.text.toString()
             val password = binding.etPassword.text.toString()
             if (checkValidation(mobileNumber, password)) {
-                startActivity(Intent(requireContext() , UserActivity::class.java))
-                requireActivity().finish()
-//                lifecycleScope.launch { viewModel.loginUser(LoginRequest(mobileNumber, password)) }
+                lifecycleScope.launch { viewModel.loginUser(LoginRequest(mobileNumber, password)) }
             }
         }
 
@@ -62,6 +61,7 @@ class LoginFragment : BaseFragment() {
             navController.navigate(R.id.action_loginFragment_to_registerFragment)
         }
     }
+
 
     private fun observeLiveData() {
         viewModel.loginLiveData.observe(viewLifecycleOwner) { response ->
@@ -71,6 +71,10 @@ class LoginFragment : BaseFragment() {
                 }
                 is Resource.Success -> {
                     hideLoadingIndicator()
+                    sharedPreferenceCache.saveAuthToken(response.data?.accessToken!!)
+                    sharedPreferenceCache.saveUser(response.data.user)
+                    startActivity(Intent(requireContext() , UserActivity::class.java))
+                    requireActivity().finish()
                 }
 
                 is Resource.Error -> {

@@ -26,13 +26,21 @@
     <fragment
         android:id="@+id/completeFragment"
         android:name="com.mywork.loadigouser.ui.auth.complete.CompleteFragment"
-        android:label="CompleteFragment" />
+        android:label="CompleteFragment" >
+        <argument
+            android:name="phone"
+            app:argType="string" />
+    </fragment>
     <fragment
         android:id="@+id/otpFragment"
         android:name="com.mywork.loadigouser.ui.auth.otp.OtpFragment"
         android:label="OtpFragment" >
         <action
             android:id="@+id/action_otpFragment_to_completeFragment"
-            app:destination="@id/completeFragment" />
+            app:destination="@id/completeFragment"
+            app:popUpTo="@id/registerFragment" />
+        <argument
+            android:name="phone"
+            app:argType="string" />
     </fragment>
 </navigation>

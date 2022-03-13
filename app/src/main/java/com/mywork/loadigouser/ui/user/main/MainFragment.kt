@@ -15,6 +15,7 @@ import com.mywork.loadigouser.databinding.FragmentMainBinding
 import com.mywork.loadigouser.databinding.FragmentRegisterBinding
 import com.mywork.loadigouser.model.remote.request.auth.LoginRequest
 import com.mywork.loadigouser.model.remote.response.user.ServiceResponse
+import com.mywork.loadigouser.ui.user.UserActivity
 import com.mywork.loadigouser.util.LocalNotificationType
 import com.mywork.loadigouser.util.Resource
 import dagger.hilt.android.AndroidEntryPoint
@@ -22,7 +23,7 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @AndroidEntryPoint
-class MainFragment : BaseFragment() {
+class MainFragment : BaseFragment(), ServicesAdapter.ClickListener {
     private var _binding: FragmentMainBinding? = null
     private val binding get() = _binding!!
 
@@ -42,32 +43,37 @@ class MainFragment : BaseFragment() {
         return binding.root
     }
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        lifecycleScope.launch { viewModel.getServices()}
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         navController = Navigation.findNavController(view)
         binding.lifecycleOwner = this
         binding.adapter = adapter
+        adapter.setClickListener(this)
         observeLiveData()
-        handleClicks()
+
     }
 
-    private fun handleClicks() {
-        val services = mutableListOf<ServiceResponse>()
-        services.add(ServiceResponse(1,"Fuel" ))
-        services.add(ServiceResponse(2,"Tow Truck" ))
-        services.add(ServiceResponse(3,"Courier" ))
-        services.add(ServiceResponse(4,"Buy" ))
-        adapter.submitList(services)
+    override fun onResume() {
+        super.onResume()
+        (activity as UserActivity).binding.iHeader.tvTitle.text = getString(R.string.home)
+        (activity as UserActivity).binding.iHeader.btnBack.visibility = View.GONE
     }
+
 
     private fun observeLiveData() {
-        viewModel.loginLiveData.observe(viewLifecycleOwner) { response ->
+        viewModel.servicesLiveData.observe(viewLifecycleOwner) { response ->
             when (response) {
                 is Resource.Loading -> {
                     showLoadingIndicator()
                 }
                 is Resource.Success -> {
                     hideLoadingIndicator()
+                    adapter.submitList(response.data)
                 }
 
                 is Resource.Error -> {
@@ -84,5 +90,9 @@ class MainFragment : BaseFragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    override fun onClickService(position: Int) {
+        navController.navigate(R.id.action_mainFragment_to_categoriesFragment)
     }
 }

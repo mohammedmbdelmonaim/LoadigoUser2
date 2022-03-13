@@ -6,185 +6,246 @@
 
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:fillViewport="true">
 
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guidelineStart"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintGuide_begin="@dimen/_20sdp" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guidelineTop"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_begin="@dimen/_20sdp" />
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guidelineStart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="@dimen/_20sdp" />
 
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guidelineBottom"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_end="@dimen/_20sdp" />
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guidelineTop"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_begin="@dimen/_20sdp" />
 
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guidelineEnd"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintGuide_end="@dimen/_20sdp" />
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guidelineBottom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_end="@dimen/_20sdp" />
 
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guidelineCenter"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.1" />
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guidelineEnd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_end="@dimen/_20sdp" />
 
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guidelineBottomView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.876" />
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guidelineCenter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.1" />
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/txtSignIn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/sf_pro_bold"
-            android:text="@string/complete_you_account"
-            android:textColor="@color/selected_indicator"
-            android:textSize="@dimen/_18ssp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@id/guidelineCenter"
-            app:layout_constraintVertical_bias="0.2" />
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guidelineBottomView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.876" />
 
-        <com.google.android.material.button.MaterialButtonToggleGroup
-            android:id="@+id/toggleButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_40sdp"
-            android:background="@drawable/bg_toggle"
-            android:paddingHorizontal="@dimen/_20sdp"
-            android:paddingVertical="@dimen/_5sdp"
-            app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
-            app:layout_constraintStart_toStartOf="@id/guidelineStart"
-            app:layout_constraintTop_toBottomOf="@id/txtSignIn"
-            app:selectionRequired="true"
-            app:singleSelection="true">
-
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/btnFemale"
-                android:layout_width="@dimen/_80sdp"
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtSignIn"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/sf_pro_bold"
-                android:text="@string/female"
-                android:textAllCaps="false"
-                android:textColor="@color/color_toggle_text"
+                android:text="@string/complete_you_account"
+                android:textColor="@color/selected_indicator"
+                android:textSize="@dimen/_18ssp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/guidelineCenter"
+                app:layout_constraintVertical_bias="0.2" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/user_imageView"
+                android:layout_width="@dimen/_70sdp"
+                android:layout_height="@dimen/_70sdp"
+                android:layout_marginTop="@dimen/_40sdp"
+                android:src="@mipmap/ic_launcher"
+                app:civ_border_color="@color/grey"
+                app:civ_border_width="@dimen/_2sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtSignIn" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/iv_change_image"
+                android:layout_width="@dimen/_24sdp"
+                android:layout_height="@dimen/_24sdp"
+                android:layout_margin="@dimen/_4sdp"
+                android:src="@drawable/vc_camera"
+                app:civ_border_color="#FFFFFF"
+                app:civ_border_width="@dimen/_1sdp"
+                app:layout_constraintBottom_toBottomOf="@+id/user_imageView"
+                app:layout_constraintEnd_toEndOf="@+id/user_imageView" />
+
+            <com.google.android.material.button.MaterialButtonToggleGroup
+                android:id="@+id/toggleButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:background="@drawable/bg_toggle"
+                android:paddingHorizontal="@dimen/_8sdp"
+                android:paddingVertical="@dimen/_2sdp"
+                app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+                app:layout_constraintStart_toStartOf="@id/guidelineStart"
+                app:layout_constraintTop_toBottomOf="@id/user_imageView"
+                app:selectionRequired="true"
+                app:singleSelection="true">
+
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnFemale"
+                    android:layout_width="@dimen/_80sdp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/sf_pro_bold"
+                    android:text="@string/female"
+                    android:textAllCaps="false"
+                    android:textColor="@color/color_toggle_text"
+                    android:textSize="@dimen/_12ssp"
+
+                    app:backgroundTint="@color/backgroung_toggle_button"
+                    app:cornerRadius="@dimen/_16sdp"
+                    app:rippleColor="@color/black" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnMale"
+                    android:layout_width="@dimen/_80sdp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/sf_pro_bold"
+                    android:text="@string/male"
+                    android:textAllCaps="false"
+                    android:textColor="@color/color_toggle_text"
+                    android:textSize="@dimen/_12ssp"
+                    app:backgroundTint="@color/backgroung_toggle_button"
+                    app:cornerRadius="@dimen/_16sdp"
+                    app:rippleColor="@color/black" />
+            </com.google.android.material.button.MaterialButtonToggleGroup>
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/etFullName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:background="@null"
+                android:drawableStart="@drawable/user"
+                android:drawablePadding="@dimen/_8sdp"
+                android:fontFamily="@font/sf_pro_semibold"
+                android:hint="@string/full_name"
+                android:inputType="text"
+                android:paddingHorizontal="@dimen/_12sdp"
+                android:paddingVertical="@dimen/_10sdp"
+                android:textAlignment="viewStart"
+                android:textColor="@color/black"
+                android:textColorHint="@color/grey"
                 android:textSize="@dimen/_12ssp"
-                app:backgroundTint="@color/backgroung_toggle_button"
-                app:cornerRadius="@dimen/_6sdp"
-                app:rippleColor="@color/black" />
+                app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+                app:layout_constraintStart_toStartOf="@id/guidelineStart"
+                app:layout_constraintTop_toBottomOf="@id/toggleButton" />
+
+            <View
+                android:id="@+id/up_divider"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_2sdp"
+                android:layout_marginHorizontal="@dimen/_12sdp"
+                android:background="@drawable/horizontal_discrete_line"
+                app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+                app:layout_constraintStart_toStartOf="@id/guidelineStart"
+                app:layout_constraintTop_toBottomOf="@id/etFullName" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/etEmail"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:background="@null"
+                android:drawableStart="@drawable/email"
+                android:drawablePadding="@dimen/_8sdp"
+                android:fontFamily="@font/sf_pro_semibold"
+                android:hint="@string/email_address"
+                android:inputType="textEmailAddress"
+                android:paddingHorizontal="@dimen/_12sdp"
+                android:paddingVertical="@dimen/_10sdp"
+                android:textAlignment="viewStart"
+                android:textColor="@color/black"
+                android:textColorHint="@color/grey"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+                app:layout_constraintStart_toStartOf="@id/guidelineStart"
+                app:layout_constraintTop_toBottomOf="@id/etFullName" />
+
+            <View
+                android:id="@+id/up_divider2"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_2sdp"
+                android:layout_marginHorizontal="@dimen/_12sdp"
+                android:background="@drawable/horizontal_discrete_line"
+                app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+                app:layout_constraintStart_toStartOf="@id/guidelineStart"
+                app:layout_constraintTop_toBottomOf="@id/etEmail" />
+
+            <TextView
+                android:id="@+id/tvBirthDate"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:background="@null"
+                android:drawableStart="@drawable/ic_date"
+                android:drawablePadding="@dimen/_8sdp"
+                android:drawableTint="@color/grey"
+                android:fontFamily="@font/sf_pro_semibold"
+                android:hint="@string/birthdate"
+                android:paddingHorizontal="@dimen/_12sdp"
+                android:paddingVertical="@dimen/_10sdp"
+                android:textAlignment="viewStart"
+                android:textColor="@color/black"
+                android:textColorHint="@color/grey"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+                app:layout_constraintStart_toStartOf="@id/guidelineStart"
+                app:layout_constraintTop_toBottomOf="@id/etEmail" />
+
+            <View
+                android:id="@+id/up_divider3"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_2sdp"
+                android:layout_marginHorizontal="@dimen/_12sdp"
+                android:background="@drawable/horizontal_discrete_line"
+                app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+                app:layout_constraintStart_toStartOf="@id/guidelineStart"
+                app:layout_constraintTop_toBottomOf="@id/tvBirthDate" />
 
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/btnRoundTrip"
-                android:layout_width="@dimen/_80sdp"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/sf_pro_bold"
-                android:text="@string/male"
+                android:id="@+id/btnFinish"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginTop="@dimen/_40sdp"
+                android:fontFamily="@font/sf_pro_semibold"
+                android:text="@string/finish"
                 android:textAllCaps="false"
-                android:textColor="@color/color_toggle_text"
+                android:textColor="@color/white"
                 android:textSize="@dimen/_12ssp"
-                app:backgroundTint="@color/backgroung_toggle_button"
-                app:cornerRadius="@dimen/_6sdp"
-                app:rippleColor="@color/black" />
-        </com.google.android.material.button.MaterialButtonToggleGroup>
-
-        <androidx.appcompat.widget.AppCompatEditText
-            android:id="@+id/etFullName"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_20sdp"
-            android:background="@null"
-            android:drawableStart="@drawable/user"
-            android:drawablePadding="@dimen/_8sdp"
-            android:fontFamily="@font/sf_pro_semibold"
-            android:hint="@string/full_name"
-            android:inputType="text"
-            android:paddingHorizontal="@dimen/_12sdp"
-            android:paddingVertical="@dimen/_10sdp"
-            android:textAlignment="viewStart"
-            android:textColor="@color/black"
-            android:textColorHint="@color/grey"
-            android:textSize="@dimen/_12ssp"
-            app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
-            app:layout_constraintStart_toStartOf="@id/guidelineStart"
-            app:layout_constraintTop_toBottomOf="@id/toggleButton" />
-
-        <View
-            android:id="@+id/up_divider"
-            android:layout_width="0dp"
-            android:layout_height="@dimen/_2sdp"
-            android:layout_marginHorizontal="@dimen/_12sdp"
-            android:background="@drawable/horizontal_discrete_line"
-            app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
-            app:layout_constraintStart_toStartOf="@id/guidelineStart"
-            app:layout_constraintTop_toBottomOf="@id/etFullName" />
-
-        <androidx.appcompat.widget.AppCompatEditText
-            android:id="@+id/etEmail"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_20sdp"
-            android:background="@null"
-            android:drawableStart="@drawable/email"
-            android:drawablePadding="@dimen/_8sdp"
-            android:fontFamily="@font/sf_pro_semibold"
-            android:hint="@string/email_address"
-            android:inputType="textEmailAddress"
-            android:paddingHorizontal="@dimen/_12sdp"
-            android:paddingVertical="@dimen/_10sdp"
-            android:textAlignment="viewStart"
-            android:textColor="@color/black"
-            android:textColorHint="@color/grey"
-            android:textSize="@dimen/_12ssp"
-            app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
-            app:layout_constraintStart_toStartOf="@id/guidelineStart"
-            app:layout_constraintTop_toBottomOf="@id/etFullName" />
-
-        <View
-            android:id="@+id/up_divider2"
-            android:layout_width="0dp"
-            android:layout_height="@dimen/_2sdp"
-            android:layout_marginHorizontal="@dimen/_12sdp"
-            android:background="@drawable/horizontal_discrete_line"
-            app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
-            app:layout_constraintStart_toStartOf="@id/guidelineStart"
-            app:layout_constraintTop_toBottomOf="@id/etEmail" />
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnFinish"
-            android:layout_width="0dp"
-            android:layout_height="@dimen/_40sdp"
-            android:layout_marginTop="@dimen/_40sdp"
-            android:fontFamily="@font/sf_pro_semibold"
-            android:text="@string/finish"
-            android:textAllCaps="false"
-            android:textColor="@color/white"
-            android:textSize="@dimen/_12ssp"
-            app:backgroundTint="@color/bg_btn"
-            app:cornerRadius="@dimen/_8sdp"
-            app:layout_constraintEnd_toEndOf="@id/up_divider2"
-            app:layout_constraintStart_toStartOf="@id/up_divider2"
-            app:layout_constraintTop_toBottomOf="@id/up_divider2" />
+                app:backgroundTint="@color/bg_btn"
+                app:cornerRadius="@dimen/_8sdp"
+                app:layout_constraintEnd_toEndOf="@id/up_divider3"
+                app:layout_constraintStart_toStartOf="@id/up_divider3"
+                app:layout_constraintTop_toBottomOf="@id/up_divider3" />
 
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
 </layout>

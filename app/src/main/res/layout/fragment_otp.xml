@@ -105,7 +105,7 @@
             app:hideLineWhenFilled="true"
             app:itemCount="4"
             app:itemHeight="@dimen/_50sdp"
-
+            android:elevation="@dimen/_8sdp"
             app:itemSpacing="@dimen/_8sdp"
             app:itemWidth="@dimen/_55sdp"
             app:layout_constraintBottom_toBottomOf="@id/guidelineBottom"
@@ -113,7 +113,7 @@
             app:layout_constraintStart_toStartOf="@id/guidelineStart"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.46"
-            app:lineWidth="0dp"
+            app:lineWidth="10dp"
             app:lineColor="#fff"
             app:viewType="rectangle" />
 
@@ -124,7 +124,7 @@
             android:textSize="@dimen/_16ssp"
             android:textColor="@color/black"
             android:fontFamily="@font/sf_pro_regular"
-            tools:text="15 Sec Left"
+            tools:text="@string/sec_left"
             app:layout_constraintVertical_bias="0.3"
             app:layout_constraintTop_toTopOf="@id/guidelineCenter"
             app:layout_constraintStart_toStartOf="@id/guidelineStart"
@@ -160,6 +160,13 @@
             app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
             app:layout_constraintTop_toTopOf="@id/btnResend"
             app:layout_constraintBottom_toBottomOf="@id/btnResend"/>
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/empty_views"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:visibility="invisible"
+            app:constraint_referenced_ids="btnResend,txt_not_have_account,txtOr,btnContact"/>
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnResend"

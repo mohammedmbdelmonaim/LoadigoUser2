@@ -18,7 +18,8 @@ import androidx.core.content.ContextCompat
 import com.google.android.material.card.MaterialCardView
 import com.mywork.loadigouser.R
 import com.mywork.loadigouser.ui.dialogs.LocalNotificationsDialog
-
+import com.mywork.loadigouser.ui.dialogs.LocalNotificationsType
+import com.mywork.loadigouser.util.LocalNotificationType
 import java.util.*
 
 fun Context.getApplicationVersionNumber(): String {
@@ -31,56 +32,35 @@ fun Context.getApplicationVersionNumber(): String {
     }
 }
 
-//fun Context.showLocalNotification(type: LocalNotificationType, message: CharSequence) {
-//    when (type) {
-//        SUCCESS -> {
-//            LocalNotificationsDialog(
-//                LocalNotificationsType.SUCCESS,
-//                message.toString()
-//            ).show((this as AppCompatActivity).supportFragmentManager, "LocalNotifications")
-//        }
-//        INFO -> {
-//            LocalNotificationsDialog(
-//                LocalNotificationsType.INFO,
-//                message.toString()
-//            ).show((this as AppCompatActivity).supportFragmentManager, "LocalNotifications")
-//        }
-//        WARNING -> {
-//            LocalNotificationsDialog(
-//                LocalNotificationsType.WARNING,
-//                message.toString()
-//            ).show((this as AppCompatActivity).supportFragmentManager, "LocalNotifications")
-//        }
-//        ERROR -> {
-//            LocalNotificationsDialog(
-//                LocalNotificationsType.ERROR,
-//                message.toString()
-//            ).show((this as AppCompatActivity).supportFragmentManager, "LocalNotifications")
-//        }
-//    }
-//}
+fun Context.showLocalNotification(type: LocalNotificationType, message: CharSequence) {
+    when (type) {
+        LocalNotificationType.SUCCESS -> {
+            LocalNotificationsDialog(
+                LocalNotificationsType.SUCCESS,
+                message.toString()
+            ).show((this as AppCompatActivity).supportFragmentManager, "LocalNotifications")
+        }
+        LocalNotificationType.INFO -> {
+            LocalNotificationsDialog(
+                LocalNotificationsType.INFO,
+                message.toString()
+            ).show((this as AppCompatActivity).supportFragmentManager, "LocalNotifications")
+        }
+        LocalNotificationType.WARNING -> {
+            LocalNotificationsDialog(
+                LocalNotificationsType.WARNING,
+                message.toString()
+            ).show((this as AppCompatActivity).supportFragmentManager, "LocalNotifications")
+        }
+        LocalNotificationType.ERROR -> {
+            LocalNotificationsDialog(
+                LocalNotificationsType.ERROR,
+                message.toString()
+            ).show((this as AppCompatActivity).supportFragmentManager, "LocalNotifications")
+        }
+    }
+}
 
-fun Context.hideLocalNotification() = (this as AppCompatActivity)
-    .supportFragmentManager
-    .findFragmentByTag("LocalNotifications")
-    ?.let { it as? LocalNotificationsDialog }
-    ?.dismiss()
-
-//fun Context.createEditText(it: FieldModel): EditText {
-//    return EditText(this).apply {
-//        setBackgroundColor(
-//            ContextCompat.getColor(
-//                this@createEditText,
-//                android.R.color.transparent
-//            )
-//        )
-//        setPadding(32, 32, 32, 32)
-//        id = it.id
-//        hint = it.placeHolder
-//        inputType = InputType.TYPE_CLASS_NUMBER
-//        filters = arrayOf(InputFilter.LengthFilter(it.maxLength))
-//    }
-//}
 
 fun Context.createMaterialCard(): MaterialCardView {
     return MaterialCardView(this).apply {
@@ -102,9 +82,9 @@ fun Context.createSpinner(items: List<Any>): Spinner {
 }
 
 
-
 fun Context.getStringByLocale(@StringRes stringRes: Int, locale: Locale): String {
     val configuration = Configuration(resources.configuration)
     configuration.setLocale(locale)
     return createConfigurationContext(configuration).resources.getString(stringRes)
 }
+

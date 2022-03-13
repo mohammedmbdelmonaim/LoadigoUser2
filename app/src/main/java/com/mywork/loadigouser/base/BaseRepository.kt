@@ -40,6 +40,10 @@ open class BaseRepository {
             HttpStatus.SC_BAD_REQUEST -> {
                 response.errorBody()?.string().extractResponseFromServerError()
             }
+
+            HttpStatus.VERIFYTHING -> {
+                response.errorBody()?.string().extractResponseFromServerError()
+            }
             HttpStatus.SC_NOT_ACCEPTABLE -> {
                 BaseResponse(message = "Server not accepting the request")
             }
@@ -49,10 +53,10 @@ open class BaseRepository {
                             response.body() as BaseResponse<T>
                     } catch(ex: Exception) {
                         FirebaseCrashlytics.getInstance().recordException(ex)
-                        BaseResponse("")
+                        BaseResponse(response.message())
                     }
                 } else {
-                    BaseResponse("")
+                    BaseResponse(response.message())
                 }
             }
         }
@@ -99,12 +103,12 @@ open class BaseRepository {
 private fun <T> String?.extractResponseFromServerError(): BaseResponse<T> {
     return this?.let {
         val response = JSONObject(it)
-        var message = response.getString("Message")
+        var message = response.getString("message")
         if (message.isEmpty().or(message.isBlank())) {
             message = ""
         }
-        val success = response.getBoolean("Success")
-        BaseResponse(message = message, statusCode = 400)
+        val statusCode = response.getInt("statusCode")
+        BaseResponse(message = message, statusCode = statusCode)
     } ?: BaseResponse(
         message = "",
         statusCode = 400

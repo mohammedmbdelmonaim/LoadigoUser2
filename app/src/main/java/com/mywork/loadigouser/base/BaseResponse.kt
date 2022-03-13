@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName
 import java.io.IOException
 
 open class BaseResponse<T>(
-    @SerializedName("Message")
+    @SerializedName("message")
     var message: String? = null,
     @SerializedName("statusCode")
     var statusCode: Int? = null,

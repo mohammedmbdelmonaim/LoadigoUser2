@@ -43,4 +43,13 @@
         <item name="android:windowMinWidthMajor">97%</item>
         <item name="android:windowMinWidthMinor">97%</item>
     </style>
+
+    <style name="dlg_datePicker" parent="Theme.AppCompat.Light.Dialog">
+        <item name="android:datePickerStyle">@style/datePicker_style</item>
+        <item name="android:textSize">@dimen/_14ssp</item>
+    </style>
+
+    <style name="datePicker_style" parent="android:Widget.Material.Light.DatePicker">
+        <item name="android:datePickerMode">spinner</item>
+    </style>
 </resources>

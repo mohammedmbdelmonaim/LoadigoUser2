@@ -21,11 +21,13 @@
         <activity
             android:name=".ui.boarding.OnBoardingActivity"
             android:exported="false"
+            android:screenOrientation="portrait"
             android:theme="@style/Theme.LoadigoUserCustom"/>
 
         <activity
             android:name=".ui.auth.AuthActivity"
             android:exported="false"
+            android:screenOrientation="portrait"
             android:theme="@style/Theme.LoadigoUserCustom" />
         <activity
             android:name=".ui.splash.SplashActivity"

@@ -135,5 +135,6 @@ public interface HttpStatus {
 
     /** <tt>507 Insufficient Storage</tt> (WebDAV - RFC 2518) */
     public static final int SC_INSUFFICIENT_STORAGE = 507;
+    public static final int VERIFYTHING = 514;
 
 }

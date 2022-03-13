@@ -15,11 +15,11 @@ class OtpViewModel @Inject constructor(private val repository: OtpRepository): V
     private val otpMutableLiveData = SingleLiveData<Resource<OtpResponse>>()
     val otpLiveData: SingleLiveData<Resource<OtpResponse>> get() = otpMutableLiveData
 
-    suspend fun registerUser(request: OtpRequest) {
+    suspend fun checkOtp(request: OtpRequest) {
 
         val response = repository.checkOtp(request = request)
-        if (response.statusCode == 200) {
-            otpMutableLiveData.value = Resource.Success(response.data!!)
+        if (response.statusCode == 201) {
+            otpMutableLiveData.value = Resource.Success(response.data!!,response.message!!)
         } else {
             otpMutableLiveData.value = Resource.Error(response.message!!)
         }

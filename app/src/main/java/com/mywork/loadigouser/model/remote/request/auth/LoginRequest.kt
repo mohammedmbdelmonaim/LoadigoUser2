@@ -2,7 +2,7 @@ package com.mywork.loadigouser.model.remote.request.auth
 
 import com.google.gson.annotations.SerializedName
 
-class LoginRequest(
+data class LoginRequest(
     @SerializedName("phone")
     val phone: String? = null,
 

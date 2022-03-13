@@ -16,10 +16,10 @@ class LoginViewModel @Inject constructor(private val repository: LoginRepository
 
 
     suspend fun loginUser(loginRequest: LoginRequest) {
-
+        loginMutableLiveData.value = Resource.Loading()
         val response = repository.loginUser(loginRequest)
-        if (response.statusCode == 200) {
-            loginMutableLiveData.value = Resource.Success(response.data!!)
+        if (response.statusCode == 201) {
+            loginMutableLiveData.value = Resource.Success(response.data!!,response.message!!)
         } else {
             loginMutableLiveData.value = Resource.Error(response.message!!)
         }

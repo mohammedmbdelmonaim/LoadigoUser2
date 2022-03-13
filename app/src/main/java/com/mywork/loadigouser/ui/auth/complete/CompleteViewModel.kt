@@ -16,10 +16,10 @@ class CompleteViewModel @Inject constructor(private val repository: CompleteRepo
 
 
     suspend fun completeUser(completeRequest: CompleteRequest) {
-
+        completeMutableLiveData.value = Resource.Loading()
         val response = repository.completeAccount(completeRequest)
-        if (response.statusCode == 200) {
-            completeMutableLiveData.value = Resource.Success(response.data!!)
+        if (response.statusCode == 201) {
+            completeMutableLiveData.value = Resource.Success(response.data!!,response.message!!)
         } else {
             completeMutableLiveData.value = Resource.Error(response.message!!)
         }

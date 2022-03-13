@@ -7,11 +7,12 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.mywork.loadigouser.R
 import com.mywork.loadigouser.databinding.ItemServiceBinding
+import com.mywork.loadigouser.model.remote.response.user.Service
 import com.mywork.loadigouser.model.remote.response.user.ServiceResponse
 import javax.inject.Inject
 
-class ServicesAdapter @Inject constructor() : ListAdapter<ServiceResponse, ServicesAdapter.ServicesHolder>(
-    ServiceResponse.itemCallback
+class ServicesAdapter @Inject constructor() : ListAdapter<Service, ServicesAdapter.ServicesHolder>(
+    Service.itemCallback
 ) {
     inner class ServicesHolder(val binding: ItemServiceBinding) :
         RecyclerView.ViewHolder(binding.root) {
@@ -36,8 +37,8 @@ class ServicesAdapter @Inject constructor() : ListAdapter<ServiceResponse, Servi
     }
 
     override fun onBindViewHolder(holder: ServicesHolder, position: Int) {
-        val serviceResponse: ServiceResponse = getItem(position)
-        holder.binding.service = serviceResponse
+        val service: Service = getItem(position)
+        holder.binding.service = service
         holder.binding.executePendingBindings()
     }
 
