@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
+        <variable
+            name="user"
+            type="com.mywork.loadigouser.model.locale.User" />
     </data>
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
@@ -72,6 +74,8 @@
         android:textSize="@dimen/_11ssp"
         android:textColor="@color/main_blue"
         tools:text="Sherif Atef"
+        android:text="@{user.fullName}"
+        android:textAlignment="viewStart"
         android:fontFamily="@font/sf_pro_bold"
         android:layout_marginStart="@dimen/_25sdp"
         app:layout_constraintTop_toTopOf="@id/user_imageView"
@@ -85,6 +89,8 @@
             android:textSize="@dimen/_9ssp"
             android:textColor="@color/main_blue"
             tools:text="sherif3atef@gmail.com"
+            android:textAlignment="viewStart"
+            android:text="@{user.email}"
             android:fontFamily="@font/sf_pro_regular"
             app:layout_constraintBottom_toTopOf="@id/tvPhone"
             app:layout_constraintTop_toBottomOf="@id/tvName"
@@ -97,6 +103,8 @@
             android:layout_height="wrap_content"
             android:textSize="@dimen/_9ssp"
             android:textColor="@color/main_blue"
+            android:text="@{user.phone}"
+            android:textAlignment="viewStart"
             tools:text="+20 110 112 0511"
             android:fontFamily="@font/sf_pro_regular"
             app:layout_constraintBottom_toTopOf="@id/tvVerify"
@@ -111,7 +119,8 @@
             android:layout_height="wrap_content"
             android:textSize="@dimen/_9ssp"
             android:textColor="@color/white"
-            tools:text="Verified"
+            android:text="@string/verified"
+            android:textAlignment="viewStart"
             android:background="@drawable/bg_verify"
             android:fontFamily="@font/sf_pro_regular"
             app:layout_constraintBottom_toBottomOf="@id/user_imageView"
@@ -126,6 +135,7 @@
             style="@style/Widget.App.Button.OutlinedButton.IconOnly"
             app:icon="@drawable/ic_edit"
             app:layout_constraintStart_toEndOf="@id/tvName"
+            android:textAlignment="viewStart"
             app:rippleColor="@color/black"
             android:layout_marginStart="@dimen/_8sdp"
             app:layout_constraintBottom_toBottomOf="@id/tvName"

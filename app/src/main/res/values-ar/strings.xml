@@ -51,6 +51,18 @@
     <string name="become_a_captain">Become a captain</string>
     <string name="rate_the_app">Rate the app</string>
     <string name="about_the_app">About the app</string>
-    <string name="contact_us">Contact Us</string>
     <string name="sign_out">Sign Out</string>
+    <string name="logout_msg">Are you sure?</string>
+    <string name="logout">SingOut</string>
+    <string name="cancel">Cancel</string>
+    <string name="welcome">Welcome, %s</string>
+    <string name="wallet">Wallet</string>
+    <string name="profile">Profile</string>
+    <string name="verified">Verified</string>
+    <string name="english">English</string>
+    <string name="arabic">Arabic</string>
+    <string name="dropoff_location">Dropoff Location</string>
+    <string name="please_select">Please Select</string>
+    <string name="deliver_your_items_anywhere_you_want">Deliver your items anywhere you want</string>
+    <string name="pickup_location">Pickup Location</string>
 </resources>

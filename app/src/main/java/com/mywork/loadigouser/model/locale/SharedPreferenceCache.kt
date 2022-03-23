@@ -22,7 +22,7 @@ class SharedPreferenceCache @Inject constructor(private val sharedPreferences: S
 
     fun getLanguage(): String? = sharedPreferences.getString("lang", "ar")
 
-    fun saveAuthToken(token: String) {
+    fun saveAuthToken(token: String?) {
         sharedPreferences.edit { putString("token", token) }
     }
 

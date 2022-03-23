@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
+import androidx.navigation.ui.NavigationUI
 import com.mywork.loadigouser.R
 import com.mywork.loadigouser.base.BaseActivity
 import com.mywork.loadigouser.databinding.ActivityAuthBinding
@@ -28,6 +29,7 @@ class UserActivity : BaseActivity() {
             else
                 navController.navigateUp()
         }
+        NavigationUI.setupWithNavController(binding.bottomNavigation, navController)
     }
 
     override fun onDestroy() {

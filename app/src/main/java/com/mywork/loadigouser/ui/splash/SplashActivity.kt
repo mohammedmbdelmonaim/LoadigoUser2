@@ -35,7 +35,7 @@ class SplashActivity : BaseActivity() {
 
         this.loadingIndicator.showNow(supportFragmentManager, "")
 
-        setLanguage("en")
+        setLanguage(sharedPreferenceCache.getLanguage())
 
         if (sharedPreferenceCache.getAuthToken()
                 .isNullOrEmpty().not() && sharedPreferenceCache.getUser().isNullOrEmpty().not()

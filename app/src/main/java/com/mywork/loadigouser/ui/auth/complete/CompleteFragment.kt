@@ -94,7 +94,7 @@ class CompleteFragment : BaseFragment() {
                             args.phone,
                             fileUri.toString(),
                             gender,
-                            birthDate
+                            "2022-03-17T19:00:36.807Z"
                         )
                     )
                 }
