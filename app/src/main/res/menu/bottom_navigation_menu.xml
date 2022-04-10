@@ -2,7 +2,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/mainFragment"
-        android:icon="@drawable/ic_home"
+        android:icon="@drawable/ic_home_main"
         android:title="@string/home"
         />
 
@@ -14,7 +14,7 @@
 
     <item
         android:id="@+id/paymentFragment"
-        android:icon="@drawable/ic_receipt"
+        android:icon="@drawable/ic_payment"
         android:title="@string/wallet"
         />
 

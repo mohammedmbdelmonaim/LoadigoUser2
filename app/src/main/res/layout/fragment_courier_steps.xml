@@ -1,0 +1,423 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineStart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="@dimen/_20sdp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineTop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="@dimen/_20sdp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineBottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_end="@dimen/_20sdp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineEnd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="@dimen/_20sdp" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivLocation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@id/guidelineStart"
+            app:layout_constraintTop_toTopOf="@id/guidelineTop"
+            app:srcCompat="@drawable/ic_check" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/lineLocation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="@id/ivLocation"
+            app:layout_constraintStart_toStartOf="@id/ivLocation"
+            app:layout_constraintTop_toBottomOf="@id/ivLocation"
+            app:srcCompat="@drawable/line" />
+
+        <TextView
+            android:id="@+id/txtLocation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:fontFamily="@font/sf_pro_bold"
+            android:text="@string/location"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintBottom_toBottomOf="@id/ivLocation"
+            app:layout_constraintStart_toEndOf="@id/ivLocation"
+            app:layout_constraintTop_toTopOf="@id/ivLocation" />
+
+        <TextView
+            android:id="@+id/txtPickup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/sf_pro_regular"
+            android:text="@string/pickup_location"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_10ssp"
+            app:layout_constraintStart_toStartOf="@id/txtLocation"
+            app:layout_constraintTop_toBottomOf="@id/txtLocation" />
+
+        <TextView
+            android:id="@+id/txtDropOff"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/sf_pro_regular"
+            android:text="@string/dropoff_location"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_10ssp"
+            app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+            app:layout_constraintStart_toEndOf="@id/txtPickup"
+            app:layout_constraintTop_toBottomOf="@id/txtLocation" />
+
+        <TextView
+            android:id="@+id/tvPickup"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginEnd="@dimen/_16sdp"
+            android:layout_marginBottom="@dimen/_8sdp"
+            android:background="@drawable/bg_location"
+            android:paddingHorizontal="@dimen/_4sdp"
+            android:ellipsize="marquee"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:fontFamily="@font/sf_pro_regular"
+            android:gravity="center_vertical"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:scrollHorizontally="true"
+            android:singleLine="true"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_10ssp"
+            app:layout_constraintBottom_toBottomOf="@id/lineLocation"
+            app:layout_constraintEnd_toStartOf="@id/tvDropOff"
+            app:layout_constraintStart_toStartOf="@id/txtLocation"
+            app:layout_constraintTop_toBottomOf="@id/txtPickup" />
+
+        <TextView
+            android:id="@+id/tvDropOff"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginEnd="@dimen/_8sdp"
+            android:layout_marginBottom="@dimen/_8sdp"
+            android:background="@drawable/bg_location"
+            android:paddingHorizontal="@dimen/_4sdp"
+            android:ellipsize="marquee"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:fontFamily="@font/sf_pro_regular"
+            android:gravity="center_vertical"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:scrollHorizontally="true"
+            android:singleLine="true"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_10ssp"
+            app:layout_constraintBottom_toBottomOf="@id/lineLocation"
+            app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+            app:layout_constraintStart_toStartOf="@id/txtDropOff"
+            app:layout_constraintTop_toBottomOf="@id/txtPickup" />
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivWeight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@id/guidelineStart"
+            app:layout_constraintTop_toBottomOf="@id/lineLocation"
+            app:srcCompat="@drawable/ic_check" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/lineWeight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="@id/ivWeight"
+            app:layout_constraintStart_toStartOf="@id/ivWeight"
+            app:layout_constraintTop_toBottomOf="@id/ivWeight"
+            app:srcCompat="@drawable/line" />
+
+        <TextView
+            android:id="@+id/txtWeight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:fontFamily="@font/sf_pro_bold"
+            android:text="@string/product_weight"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintBottom_toBottomOf="@id/ivWeight"
+            app:layout_constraintStart_toEndOf="@id/ivWeight"
+            app:layout_constraintTop_toTopOf="@id/ivWeight" />
+
+        <com.skydoves.powerspinner.PowerSpinnerView
+            android:id="@+id/spinnerWeight"
+            style="@style/PowerSpinnerStyle"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginBottom="@dimen/_8sdp"
+            android:hint="@string/please_select"
+            app:layout_constraintBottom_toBottomOf="@id/lineWeight"
+            app:layout_constraintEnd_toEndOf="@id/tvDropOff"
+            app:layout_constraintStart_toStartOf="@id/txtWeight"
+            app:layout_constraintTop_toBottomOf="@id/txtWeight" />
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivCategory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@id/guidelineStart"
+            app:layout_constraintTop_toBottomOf="@id/lineWeight"
+            app:srcCompat="@drawable/ic_check" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/lineCategory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="@id/ivCategory"
+            app:layout_constraintStart_toStartOf="@id/ivCategory"
+            app:layout_constraintTop_toBottomOf="@id/ivCategory"
+            app:srcCompat="@drawable/line" />
+
+        <TextView
+            android:id="@+id/txtCategory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:fontFamily="@font/sf_pro_bold"
+            android:text="@string/pickup_category"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintBottom_toBottomOf="@id/ivCategory"
+            app:layout_constraintStart_toEndOf="@id/ivCategory"
+            app:layout_constraintTop_toTopOf="@id/ivCategory" />
+
+        <com.skydoves.powerspinner.PowerSpinnerView
+            android:id="@+id/spinnerCategory"
+            style="@style/PowerSpinnerStyle"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginBottom="@dimen/_8sdp"
+            android:hint="@string/please_select"
+            app:layout_constraintBottom_toBottomOf="@id/lineCategory"
+            app:layout_constraintEnd_toEndOf="@id/tvDropOff"
+            app:layout_constraintStart_toStartOf="@id/txtCategory"
+            app:layout_constraintTop_toBottomOf="@id/txtCategory" />
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@id/guidelineStart"
+            app:layout_constraintTop_toBottomOf="@id/lineCategory"
+            app:srcCompat="@drawable/ic_check" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/lineType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="@id/ivType"
+            app:layout_constraintStart_toStartOf="@id/ivType"
+            app:layout_constraintTop_toBottomOf="@id/ivType"
+            app:srcCompat="@drawable/line" />
+
+        <TextView
+            android:id="@+id/txtType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:fontFamily="@font/sf_pro_bold"
+            android:text="@string/vehicle_type"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintBottom_toBottomOf="@id/ivType"
+            app:layout_constraintStart_toEndOf="@id/ivType"
+            app:layout_constraintTop_toTopOf="@id/ivType" />
+
+        <com.skydoves.powerspinner.PowerSpinnerView
+            android:id="@+id/spinnerType"
+            style="@style/PowerSpinnerStyle"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginBottom="@dimen/_8sdp"
+            android:hint="@string/please_select"
+            app:layout_constraintBottom_toBottomOf="@id/lineType"
+            app:layout_constraintEnd_toEndOf="@id/tvDropOff"
+            app:layout_constraintStart_toStartOf="@id/txtType"
+            app:layout_constraintTop_toBottomOf="@id/txtType" />
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@id/guidelineStart"
+            app:layout_constraintTop_toBottomOf="@id/lineType"
+            app:srcCompat="@drawable/ic_check" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/lineDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="@id/ivDate"
+            app:layout_constraintStart_toStartOf="@id/ivDate"
+            app:layout_constraintTop_toBottomOf="@id/ivDate"
+            app:srcCompat="@drawable/line" />
+
+        <TextView
+            android:id="@+id/txtDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:fontFamily="@font/sf_pro_bold"
+            android:text="@string/location"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintBottom_toBottomOf="@id/ivDate"
+            app:layout_constraintStart_toEndOf="@id/ivDate"
+            app:layout_constraintTop_toTopOf="@id/ivDate" />
+
+        <CheckBox
+            android:id="@+id/cbNow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+            app:layout_constraintTop_toTopOf="@id/ivDate"
+            app:layout_constraintBottom_toBottomOf="@id/ivDate"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Now"
+            android:textSize="@dimen/_10ssp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/sf_pro_bold"
+            app:layout_constraintEnd_toStartOf="@id/cbNow"
+            app:layout_constraintTop_toTopOf="@id/ivDate"
+            app:layout_constraintBottom_toBottomOf="@id/ivDate"/>
+
+        <TextView
+            android:id="@+id/tvDate"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginEnd="@dimen/_16sdp"
+            android:layout_marginBottom="@dimen/_8sdp"
+            android:hint="dd-mm-yyy"
+            android:paddingHorizontal="@dimen/_8sdp"
+            android:background="@drawable/bg_location"
+            android:fontFamily="@font/sf_pro_regular"
+            android:gravity="center_vertical"
+            android:singleLine="true"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_11ssp"
+            app:layout_constraintBottom_toBottomOf="@id/lineDate"
+            app:layout_constraintEnd_toStartOf="@id/tvTime"
+            app:layout_constraintStart_toStartOf="@id/txtDate"
+            app:layout_constraintTop_toBottomOf="@id/txtDate" />
+
+        <TextView
+            android:id="@+id/tvTime"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginEnd="@dimen/_8sdp"
+            android:layout_marginBottom="@dimen/_8sdp"
+            android:background="@drawable/bg_location"
+            android:fontFamily="@font/sf_pro_regular"
+            android:paddingHorizontal="@dimen/_8sdp"
+            android:gravity="center_vertical"
+            android:singleLine="true"
+            android:hint="HH/MM"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_10ssp"
+            app:layout_constraintBottom_toBottomOf="@id/lineDate"
+            app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+            app:layout_constraintStart_toEndOf="@id/tvDate"
+            app:layout_constraintTop_toBottomOf="@id/txtDate" />
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivDetails"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@id/guidelineStart"
+            app:layout_constraintTop_toBottomOf="@id/lineDate"
+            app:srcCompat="@drawable/ic_check" />
+
+        <TextView
+            android:id="@+id/txtDetails"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:fontFamily="@font/sf_pro_bold"
+            android:text="@string/details_instructions_optional"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintBottom_toBottomOf="@id/ivDetails"
+            app:layout_constraintStart_toEndOf="@id/ivDetails"
+            app:layout_constraintTop_toTopOf="@id/ivDetails" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/etDetails"
+           android:background="@drawable/bg_location"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:lines="3"
+            android:padding="@dimen/_8sdp"
+            android:inputType="textMultiLine"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginBottom="@dimen/_8sdp"
+            android:textSize="@dimen/_8ssp"
+            android:fontFamily="@font/sf_pro_bold"
+            android:gravity="top"
+            android:hint="@string/enter_product_details_instructions"
+            app:layout_constraintEnd_toEndOf="@id/tvDropOff"
+            app:layout_constraintStart_toStartOf="@id/txtDetails"
+            app:layout_constraintTop_toBottomOf="@id/txtDetails" />
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnContinue"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_50sdp"
+            android:layout_marginHorizontal="@dimen/_8sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:fontFamily="@font/sf_pro_semibold"
+            android:text="@string/continue_1"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_12ssp"
+            app:backgroundTint="@color/bg_btn"
+            app:cornerRadius="@dimen/_8sdp"
+            app:layout_constraintTop_toBottomOf="@id/etDetails"
+            app:layout_constraintBottom_toBottomOf="@id/guidelineBottom"
+            app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+            app:layout_constraintStart_toStartOf="@id/guidelineStart" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>

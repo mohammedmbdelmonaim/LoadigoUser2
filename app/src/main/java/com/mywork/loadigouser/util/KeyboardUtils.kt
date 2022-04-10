@@ -23,6 +23,22 @@ object KeyboardUtils {
         }, 500)
     }
 
+    @JvmStatic
+    fun showSoftKeyboard2(context: Context, view: EditText) {
+        view.requestFocus()
+        val inputMethodManager =
+            context.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+        inputMethodManager.showSoftInput(view.rootView , InputMethodManager.SHOW_IMPLICIT)
+
+    }
+
+    @JvmStatic
+    fun hideSoftKeyboard2(context: Context, view: EditText) {
+        val inputMethodManager =
+            context.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+        inputMethodManager.hideSoftInputFromWindow(view.applicationWindowToken,0)
+    }
+
     /**
      * show keyboard
      * @author Hady Ahmed

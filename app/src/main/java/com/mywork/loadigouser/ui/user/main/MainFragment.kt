@@ -55,8 +55,7 @@ class MainFragment : BaseFragment(), ServicesAdapter.ClickListener {
         navController = Navigation.findNavController(view)
         binding.lifecycleOwner = this
         binding.adapter = adapter
-        val userGson = sharedPreferenceCache.getUser()
-        val user = Gson().fromJson(userGson, User::class.java)
+
         binding.user = user
         adapter.setClickListener(this)
         observeLiveData()
@@ -67,6 +66,8 @@ class MainFragment : BaseFragment(), ServicesAdapter.ClickListener {
         super.onResume()
         (activity as UserActivity).binding.iHeader.tvTitle.text = getString(R.string.home)
         (activity as UserActivity).binding.iHeader.btnBack.visibility = View.GONE
+        (activity as UserActivity).binding.iHeader.clHeader.visibility = View.VISIBLE
+        (activity as UserActivity).binding.iHeader.btnBell.visibility = View.VISIBLE
     }
 
 
@@ -74,7 +75,7 @@ class MainFragment : BaseFragment(), ServicesAdapter.ClickListener {
         viewModel.servicesLiveData.observe(viewLifecycleOwner) { response ->
             when (response) {
                 is Resource.Loading -> {
-                    showLoadingIndicator()
+//                    showLoadingIndicator()
                 }
                 is Resource.Success -> {
                     hideLoadingIndicator()

@@ -18,5 +18,7 @@
     <color name="normalColor">#353A3E</color>
     <color name="bottom_unSelected">#DADADA</color>
     <color name="txt_color">#31336C</color>
-    <color name="txt_gray_light">#ABABAB</color>
+    <color name="gray_light">#ABABAB</color>
+    <color name="gray_light2">#F8F6FB</color>
+    <color name="gray_light3">#AAAAAA</color>
 </resources>

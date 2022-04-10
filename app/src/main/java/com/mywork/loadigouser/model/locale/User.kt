@@ -17,4 +17,11 @@ class User(@SerializedName("id"                  ) var id                : Int? 
            @SerializedName("updated_at"          ) var updatedAt         : String? = null,
            @SerializedName("admin_id"            ) var adminId           : String? = null
 
-)
+){
+    var pickupLocation: String? = null
+    var deliveryLocation: String? = null
+    var pickupLat: Double? = null
+    var pickupLong: Double? = null
+    var deliveryLat: Double? = null
+    var deliveryLong: Double? = null
+}

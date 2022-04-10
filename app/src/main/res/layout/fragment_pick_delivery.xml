@@ -50,83 +50,96 @@
             android:id="@+id/txtPick"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_8sdp"
             android:fontFamily="@font/sf_pro_bold"
             android:text="@string/deliver_your_items_anywhere_you_want"
             android:textColor="@color/selected_indicator"
-            android:textSize="@dimen/_18ssp"
+            android:textSize="@dimen/_16ssp"
             app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
             app:layout_constraintStart_toStartOf="@id/guidelineStart"
             app:layout_constraintTop_toTopOf="@id/guidelineCenter" />
 
-            <com.google.android.material.card.MaterialCardView
-                android:id="@+id/mcPick"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                app:strokeWidth="@dimen/_1sdp"
-                app:strokeColor="@color/bg_screens"
-                app:cardElevation="@dimen/_8sdp"
-                android:layout_marginHorizontal="@dimen/_20sdp"
-                android:layout_marginTop="@dimen/_20sdp"
-                app:cardCornerRadius="@dimen/_4sdp"
-                app:cardBackgroundColor="@color/white"
-                app:layout_constraintTop_toBottomOf="@id/txtPick"
-                app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
-                app:layout_constraintStart_toStartOf="@id/guidelineStart">
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/mcPick"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_8sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="@dimen/_4sdp"
+            app:cardElevation="@dimen/_8sdp"
+            app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+            app:layout_constraintStart_toStartOf="@id/guidelineStart"
+            app:layout_constraintTop_toBottomOf="@id/txtPick"
+            app:strokeColor="@color/bg_screens"
+            app:strokeWidth="@dimen/_1sdp">
 
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:padding="@dimen/_8sdp">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="@dimen/_8sdp">
 
-                    <TextView
-                        android:id="@+id/txtPick2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/pickup_location"
-                        android:textSize="@dimen/_10ssp"
-                        android:fontFamily="@font/sf_pro_regular"
-                        android:textColor="@color/black"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"/>
-                    <TextView
-                        android:id="@+id/txtPick3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/please_select"
-                        android:textSize="@dimen/_8ssp"
-                        android:fontFamily="@font/sf_pro_regular"
-                        android:textColor="@color/txt_gray_light"
-                        app:layout_constraintTop_toBottomOf="@id/txtPick2"
-                        app:layout_constraintStart_toStartOf="@id/txtPick2"
-                        app:layout_constraintEnd_toEndOf="@id/txtPick2"/>
+                <TextView
+                    android:id="@+id/txtPick2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/sf_pro_regular"
+                    android:text="@string/pickup_location"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_10ssp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-                    <androidx.appcompat.widget.AppCompatImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:srcCompat="@drawable/ic_arrow_right"/>
+                <TextView
+                    android:id="@+id/txtPick3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/sf_pro_regular"
+                    android:text="@string/please_select"
+                    android:textColor="@color/grey"
+                    android:textSize="@dimen/_8ssp"
+                    app:layout_constraintEnd_toEndOf="@id/txtPick2"
+                    app:layout_constraintStart_toStartOf="@id/txtPick2"
+                    app:layout_constraintTop_toBottomOf="@id/txtPick2" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivPick"
+                    android:layout_width="@dimen/_12sdp"
+                    android:layout_height="@dimen/_12sdp"
+                    android:layout_marginStart="@dimen/_4sdp"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="@id/txtPick3"
+                    app:layout_constraintStart_toEndOf="@id/txtPick3"
+                    app:layout_constraintTop_toTopOf="@id/txtPick3"
+                    app:srcCompat="@drawable/ic_check" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_arrow_right" />
 
 
-                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
-            </com.google.android.material.card.MaterialCardView>
+        </com.google.android.material.card.MaterialCardView>
 
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/mcDeliver"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            app:strokeWidth="@dimen/_1sdp"
-            app:strokeColor="@color/bg_screens"
-            app:cardElevation="@dimen/_8sdp"
-            android:layout_marginHorizontal="@dimen/_20sdp"
+            android:layout_marginHorizontal="@dimen/_8sdp"
             android:layout_marginTop="@dimen/_20sdp"
-            app:cardCornerRadius="@dimen/_4sdp"
             app:cardBackgroundColor="@color/white"
-            app:layout_constraintTop_toBottomOf="@id/mcPick"
+            app:cardCornerRadius="@dimen/_4sdp"
+            app:cardElevation="@dimen/_8sdp"
             app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
-            app:layout_constraintStart_toStartOf="@id/guidelineStart">
+            app:layout_constraintStart_toStartOf="@id/guidelineStart"
+            app:layout_constraintTop_toBottomOf="@id/mcPick"
+            app:strokeColor="@color/bg_screens"
+            app:strokeWidth="@dimen/_1sdp">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -137,31 +150,43 @@
                     android:id="@+id/txtDrop2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/dropoff_location"
-                    android:textSize="@dimen/_10ssp"
                     android:fontFamily="@font/sf_pro_regular"
+                    android:text="@string/dropoff_location"
                     android:textColor="@color/black"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"/>
+                    android:textSize="@dimen/_10ssp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
                 <TextView
                     android:id="@+id/txtDrop3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/please_select"
-                    android:textSize="@dimen/_8ssp"
                     android:fontFamily="@font/sf_pro_regular"
-                    android:textColor="@color/txt_gray_light"
-                    app:layout_constraintTop_toBottomOf="@id/txtDrop2"
+                    android:text="@string/please_select"
+                    android:textColor="@color/grey"
+                    android:textSize="@dimen/_8ssp"
+                    app:layout_constraintEnd_toEndOf="@id/txtDrop2"
                     app:layout_constraintStart_toStartOf="@id/txtDrop2"
-                    app:layout_constraintEnd_toEndOf="@id/txtDrop2"/>
+                    app:layout_constraintTop_toBottomOf="@id/txtDrop2" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivDrop"
+                    android:layout_width="@dimen/_12sdp"
+                    android:layout_height="@dimen/_12sdp"
+                    android:layout_marginStart="@dimen/_4sdp"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="@id/txtDrop3"
+                    app:layout_constraintStart_toEndOf="@id/txtDrop3"
+                    app:layout_constraintTop_toTopOf="@id/txtDrop3"
+                    app:srcCompat="@drawable/ic_check" />
 
                 <androidx.appcompat.widget.AppCompatImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:srcCompat="@drawable/ic_arrow_right"/>
+                    app:srcCompat="@drawable/ic_arrow_right" />
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>
@@ -169,21 +194,20 @@
         </com.google.android.material.card.MaterialCardView>
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnSignIn"
+            android:id="@+id/btnContinue"
             android:layout_width="0dp"
             android:layout_height="@dimen/_50sdp"
+            android:layout_marginHorizontal="@dimen/_8sdp"
             android:layout_marginTop="@dimen/_40sdp"
             android:fontFamily="@font/sf_pro_semibold"
             android:text="@string/continue_1"
             android:textAllCaps="false"
             android:textColor="@color/white"
-            android:layout_marginHorizontal="@dimen/_20sdp"
             android:textSize="@dimen/_12ssp"
             app:backgroundTint="@color/bg_btn"
             app:cornerRadius="@dimen/_8sdp"
+            app:layout_constraintBottom_toBottomOf="@id/guidelineBottom"
             app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
-            app:layout_constraintStart_toStartOf="@id/guidelineStart"
-            app:layout_constraintBottom_toBottomOf="@id/guidelineBottom" />
-
+            app:layout_constraintStart_toStartOf="@id/guidelineStart" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

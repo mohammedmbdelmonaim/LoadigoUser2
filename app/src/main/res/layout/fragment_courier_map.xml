@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <fragment
+                android:id="@+id/map_fragment"
+                class="com.google.android.gms.maps.SupportMapFragment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/llSearching"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_70sdp"
+                android:layout_gravity="bottom"
+                android:layout_margin="@dimen/_20sdp"
+                android:background="@drawable/bg_courier_search"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <com.airbnb.lottie.LottieAnimationView
+                    android:layout_width="@dimen/_70sdp"
+                    android:layout_height="@dimen/_50sdp"
+                    android:layout_marginStart="@dimen/_16sdp"
+                    app:layout_constraintBottom_toBottomOf="@id/map_fragment"
+                    app:layout_constraintEnd_toEndOf="@id/map_fragment"
+                    app:layout_constraintStart_toStartOf="@id/map_fragment"
+                    app:layout_constraintTop_toTopOf="@id/map_fragment"
+                    app:lottie_autoPlay="true"
+                    app:lottie_fileName="searching.json"
+                    app:lottie_loop="true" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_1sdp"
+                    android:fontFamily="@font/sf_pro_bold"
+                    android:text="@string/searching_driver"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_14ssp" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/llOrder"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_80sdp"
+                android:layout_gravity="bottom"
+                android:layout_margin="@dimen/_20sdp"
+                android:visibility="gone"
+                android:background="@drawable/bg_courier_search_delivery"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/ic_parcel"
+                    android:layout_marginStart="@dimen/_12sdp"/>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/white"
+                        android:text="@string/order_id_s"
+                        android:textSize="@dimen/_11ssp"
+                        android:layout_marginStart="@dimen/_12sdp"
+                        android:fontFamily="@font/sf_pro_bold"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/white"
+                        android:text="@string/s_s"
+                        android:textSize="@dimen/_10ssp"
+                        android:layout_marginStart="@dimen/_12sdp"
+                        android:fontFamily="@font/sf_pro_bold"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/white"
+                        android:text="@string/expected_delivery_s"
+                        android:textSize="@dimen/_10ssp"
+                        android:layout_marginStart="@dimen/_12sdp"
+                        android:fontFamily="@font/sf_pro_bold"/>
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/flAddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_20sdp"
+            app:layout_constraintTop_toBottomOf="@id/map_fragment">
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/bg_courier_map">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivBlue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_8sdp"
+                    android:layout_marginTop="@dimen/_16sdp"
+                    app:layout_constraintBottom_toTopOf="@id/ivLine"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_circle_blue" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivLine"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_30sdp"
+                    app:layout_constraintBottom_toTopOf="@id/ivRed"
+                    app:layout_constraintEnd_toEndOf="@id/ivBlue"
+                    app:layout_constraintStart_toStartOf="@id/ivBlue"
+                    app:layout_constraintTop_toBottomOf="@id/ivBlue"
+                    app:srcCompat="@drawable/line" />
+
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivRed"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_8sdp"
+                    android:layout_marginBottom="@dimen/_16sdp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/ivLine"
+                    app:srcCompat="@drawable/ic_circle_red" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txtPickup"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_12sdp"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:fontFamily="@font/sf_pro_bold"
+                    android:text="@string/pickup_point"
+                    android:textColor="@color/gray_light3"
+                    android:textSize="@dimen/_10ssp"
+                    app:layout_constraintStart_toEndOf="@id/ivBlue"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvPickup"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:fontFamily="@font/sf_pro_semibold"
+                    android:maxLines="1"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_10ssp"
+                    app:layout_constraintEnd_toEndOf="@id/vLine"
+                    app:layout_constraintHorizontal_bias="0"
+                    app:layout_constraintStart_toStartOf="@id/txtPickup"
+                    app:layout_constraintTop_toBottomOf="@id/txtPickup"
+                    android:text="367 Um Suqim, Dubai, UAE" />
+
+                <View
+                    android:id="@+id/vLine"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginEnd="@dimen/_16sdp"
+                    android:background="@color/gray_light3"
+                    app:layout_constraintBottom_toBottomOf="@id/ivLine"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/txtPickup"
+                    app:layout_constraintTop_toTopOf="@id/ivLine" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txtDelivery"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:fontFamily="@font/sf_pro_bold"
+                    android:text="@string/delivery_point"
+                    android:textColor="@color/gray_light3"
+                    android:textSize="@dimen/_10ssp"
+                    app:layout_constraintStart_toStartOf="@id/txtPickup"
+                    app:layout_constraintTop_toBottomOf="@id/vLine" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvDelivery"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:fontFamily="@font/sf_pro_semibold"
+                    android:maxLines="1"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_10ssp"
+                    app:layout_constraintEnd_toEndOf="@id/vLine"
+                    app:layout_constraintHorizontal_bias="0"
+                    app:layout_constraintStart_toStartOf="@id/txtPickup"
+                    app:layout_constraintTop_toBottomOf="@id/txtDelivery"
+                    android:text="367 Um Suqim, Dubai, UAE" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/txtMan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:fontFamily="@font/sf_pro_bold"
+            android:text="@string/delivery_man"
+            android:textColor="@color/black"
+            android:visibility="gone"
+            android:textSize="@dimen/_13ssp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/flAddress" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clMan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:layout_marginBottom="@dimen/_16sdp"
+            android:paddingHorizontal="@dimen/_20sdp">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/mcPickupBy"
+                android:layout_width="@dimen/_60sdp"
+                android:layout_height="@dimen/_50sdp"
+                android:elevation="@dimen/_4sdp"
+                app:cardCornerRadius="@dimen/_4sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivPickupBy"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitXY"
+                    app:srcCompat="@drawable/main_img" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                android:id="@+id/tvDeliveryName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:fontFamily="@font/sf_pro_semibold"
+                android:text="Mohamed Hany"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_10ssp"
+                app:layout_constraintBottom_toTopOf="@id/rbDelivery"
+                app:layout_constraintStart_toEndOf="@id/mcPickupBy"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <RatingBar
+                android:id="@+id/rbDelivery"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/sf_pro_semibold"
+                android:textColor="@color/grey"
+                style="?android:attr/ratingBarStyleSmall"
+                android:textSize="@dimen/_8ssp"
+                app:layout_constraintBottom_toTopOf="@id/tvVehicle"
+                app:layout_constraintStart_toStartOf="@id/tvDeliveryName"
+                app:layout_constraintTop_toBottomOf="@id/tvDeliveryName"
+                tools:text="432  Umm Suqim, Dubai, UAE" />
+
+            <TextView
+                android:id="@+id/tvVehicle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/sf_pro_semibold"
+                android:textColor="@color/grey"
+                android:textSize="@dimen/_8ssp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@id/rbDelivery"
+                app:layout_constraintTop_toBottomOf="@id/rbDelivery"
+                android:text="Toyota RAV4    GXS - 123" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnMessage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/Widget.App.Button.OutlinedButton.IconOnly.Rounded"
+                app:icon="@drawable/ic_message"
+                app:rippleColor="@color/black"
+                android:visibility="visible"
+                app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.MyApp.Button.Circle"
+                android:backgroundTint="@color/bg_btn"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:iconTint="@color/white"
+                app:strokeWidth="0dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnCall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/Widget.App.Button.OutlinedButton.IconOnly.Rounded"
+                app:icon="@drawable/ic_call"
+                app:rippleColor="@color/black"
+                android:visibility="visible"
+                app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.MyApp.Button.Circle"
+                android:backgroundTint="@color/bg_btn"
+                android:layout_marginEnd="@dimen/_8sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/btnMessage"
+                app:layout_constraintTop_toTopOf="parent"
+                app:iconTint="@color/white"
+                app:strokeWidth="0dp" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</layout>

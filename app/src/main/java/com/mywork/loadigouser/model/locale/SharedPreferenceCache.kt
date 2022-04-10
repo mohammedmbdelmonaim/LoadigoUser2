@@ -4,6 +4,7 @@ import android.content.SharedPreferences
 
 import androidx.core.content.edit
 import com.google.gson.Gson
+import com.mywork.loadigouser.util.Language
 import javax.inject.Inject
 import javax.inject.Singleton
 
@@ -20,7 +21,7 @@ class SharedPreferenceCache @Inject constructor(private val sharedPreferences: S
         sharedPreferences.edit { putString("lang", lang) }
     }
 
-    fun getLanguage(): String? = sharedPreferences.getString("lang", "ar")
+    fun getLanguage(): String? = sharedPreferences.getString("lang", Language.ARABIC.lang)
 
     fun saveAuthToken(token: String?) {
         sharedPreferences.edit { putString("token", token) }

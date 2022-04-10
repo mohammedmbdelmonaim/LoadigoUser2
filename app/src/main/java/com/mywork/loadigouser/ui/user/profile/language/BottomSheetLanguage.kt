@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.mywork.loadigouser.R
 import com.mywork.loadigouser.databinding.BottomSheetLangsBinding
+import com.mywork.loadigouser.util.Language
 
 class BottomSheetLanguage(private val lang: String) : BottomSheetDialogFragment() {
 
@@ -31,7 +32,7 @@ class BottomSheetLanguage(private val lang: String) : BottomSheetDialogFragment(
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        if (lang == "en"){
+        if (lang == Language.ENGLISH.lang){
             binding.txtEn.setTextColor(R.color.grey)
             binding.txtEn.isEnabled = false
         } else{
@@ -41,13 +42,13 @@ class BottomSheetLanguage(private val lang: String) : BottomSheetDialogFragment(
 
         binding.txtEn.setOnClickListener {
             onItemBottomSheetClickListener?.let { it1 ->
-                it1("en")
+                it1(Language.ENGLISH.lang)
             }
         }
 
         binding.txtAr.setOnClickListener {
             onItemBottomSheetClickListener?.let { it1 ->
-                it1("ar")
+                it1(Language.ARABIC.lang)
             }
         }
 

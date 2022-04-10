@@ -18,7 +18,6 @@ import com.google.gson.Gson
 import com.mywork.loadigouser.R
 import com.mywork.loadigouser.base.BaseFragment
 import com.mywork.loadigouser.databinding.FragmentFuelBinding
-import com.mywork.loadigouser.databinding.FragmentMainBinding
 import com.mywork.loadigouser.model.locale.User
 import com.mywork.loadigouser.ui.user.UserActivity
 import com.mywork.loadigouser.ui.user.main.MainViewModel
@@ -27,7 +26,6 @@ import com.mywork.loadigouser.util.LocalNotificationType
 import com.mywork.loadigouser.util.Resource
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
-import javax.inject.Inject
 
 @AndroidEntryPoint
 class FuelFragment : BaseFragment(), ServicesAdapter.ClickListener, OnMapReadyCallback ,
@@ -64,8 +62,7 @@ class FuelFragment : BaseFragment(), ServicesAdapter.ClickListener, OnMapReadyCa
         super.onViewCreated(view, savedInstanceState)
         navController = Navigation.findNavController(view)
         binding.lifecycleOwner = this
-        val userGson = sharedPreferenceCache.getUser()
-        val user = Gson().fromJson(userGson, User::class.java)
+
         observeLiveData()
 
     }

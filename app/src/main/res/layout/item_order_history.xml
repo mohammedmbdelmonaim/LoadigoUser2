@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_20sdp"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:background="@drawable/bg_linear_map"
+        android:layout_marginBottom="@dimen/_12sdp">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineStart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="@dimen/_8sdp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineTop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="@dimen/_8sdp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineBottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_end="@dimen/_8sdp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineEnd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="@dimen/_8sdp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineCenter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.42" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvOrderName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Electronics"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12ssp"
+            android:fontFamily="@font/sf_pro_bold"
+            app:layout_constraintStart_toStartOf="@id/guidelineStart"
+            app:layout_constraintTop_toTopOf="@id/guidelineTop" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvOrderPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/currency"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12ssp"
+            android:fontFamily="@font/sf_pro_bold"
+            app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+            app:layout_constraintTop_toTopOf="@id/guidelineTop" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvOrderId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/order_no_s"
+            android:textColor="@color/gray_light3"
+            android:textSize="@dimen/_10ssp"
+            android:fontFamily="@font/sf_pro_bold"
+            app:layout_constraintStart_toStartOf="@id/guidelineStart"
+            app:layout_constraintTop_toBottomOf="@id/tvOrderName" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvOrderTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/s_s"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_10ssp"
+            tools:text="25-11-2021  09:30 AM"
+            android:fontFamily="@font/sf_pro_regular"
+            app:layout_constraintStart_toStartOf="@id/guidelineStart"
+            app:layout_constraintTop_toBottomOf="@id/tvOrderId" />
+
+        <View
+            android:id="@+id/up_divider"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_3sdp"
+            android:layout_marginTop="@dimen/_6sdp"
+            android:background="@drawable/horizontal_discrete_line"
+            app:layout_constraintStart_toStartOf="@id/guidelineStart"
+            app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+            app:layout_constraintTop_toBottomOf="@+id/tvOrderTime" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/ic_pickup_point"
+            app:layout_constraintTop_toTopOf="@id/tvPickupByAddress"
+            app:layout_constraintBottom_toBottomOf="@id/tvPickupByAddress"
+            app:layout_constraintStart_toStartOf="@id/guidelineStart" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvPickupByAddress"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/_8ssp"
+            android:ellipsize="marquee"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:scrollHorizontally="true"
+            android:singleLine="true"
+            android:text="تعرف على اخبار مصر، شمال إفريقيا، تونس، الجزائر، ليبيا، المغرب"
+            android:textColor="@color/black"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:layout_marginTop="@dimen/_8sdp"
+            tools:text="25-11-2021  09:30 AM"
+            android:fontFamily="@font/sf_pro_semibold"
+            app:layout_constraintStart_toEndOf="@id/iv1"
+            app:layout_constraintEnd_toEndOf="@id/guidelineCenter"
+            app:layout_constraintTop_toBottomOf="@id/up_divider" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/ic_arrow_right_circle"
+            android:layout_marginStart="@dimen/_4sdp"
+            app:layout_constraintTop_toTopOf="@id/tvPickupByAddress"
+            app:layout_constraintBottom_toBottomOf="@id/tvPickupByAddress"
+            app:layout_constraintStart_toStartOf="@id/guidelineCenter" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvDeliverByAddress"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/_8ssp"
+            android:ellipsize="marquee"
+            android:focusable="true"
+            android:text="تعرف على اخبار مصر، شمال إفريقيا، تونس، الجزائر، ليبيا، المغرب"
+            android:focusableInTouchMode="true"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:scrollHorizontally="true"
+            android:singleLine="true"
+            android:textColor="@color/black"
+            android:layout_marginEnd="@dimen/_4sdp"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:layout_marginTop="@dimen/_8sdp"
+            tools:text="25-11-2021  09:30 AM"
+            app:layout_constraintEnd_toStartOf="@id/iv3"
+            android:fontFamily="@font/sf_pro_semibold"
+            app:layout_constraintStart_toEndOf="@id/iv2"
+            app:layout_constraintTop_toBottomOf="@id/up_divider" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/ic_delivery_point"
+            android:layout_marginStart="@dimen/_4sdp"
+            app:layout_constraintTop_toTopOf="@id/tvPickupByAddress"
+            app:layout_constraintBottom_toBottomOf="@id/tvPickupByAddress"
+            app:layout_constraintEnd_toEndOf="@id/guidelineEnd" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvOrderStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Way to Deliver"
+            android:textColor="@color/bg_btn"
+            android:textSize="@dimen/_12ssp"
+            android:fontFamily="@font/sf_pro_bold"
+            android:layout_marginTop="@dimen/_8sdp"
+            app:layout_constraintBottom_toBottomOf="@id/guidelineBottom"
+            app:layout_constraintStart_toStartOf="@id/guidelineStart"
+            app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+            app:layout_constraintTop_toBottomOf="@id/iv3" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

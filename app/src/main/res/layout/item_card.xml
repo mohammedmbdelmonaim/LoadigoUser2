@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_marginBottom="@dimen/_16sdp"
+        android:layout_marginHorizontal="@dimen/_16sdp"
+        android:layout_height="wrap_content">
+
+        <RadioButton
+            android:id="@+id/rbCard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivCard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/rbCard"
+            app:layout_constraintTop_toTopOf="@id/rbCard"
+            app:layout_constraintBottom_toBottomOf="@id/rbCard"
+            app:srcCompat="@drawable/ic_mastercard" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvCardType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:text="Mastercard  -"
+            android:textSize="@dimen/_10ssp"
+            android:fontFamily="@font/sf_pro_semibold"
+            app:layout_constraintStart_toEndOf="@id/ivCard"
+            app:layout_constraintTop_toTopOf="@id/rbCard"
+            android:layout_marginStart="@dimen/_12sdp"
+            app:layout_constraintBottom_toBottomOf="@id/rbCard" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvCardNumber"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/gray_light3"
+            android:text="55XX XXXX XXXX 0123"
+            android:ellipsize="marquee"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:gravity="center_vertical"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:scrollHorizontally="true"
+            android:singleLine="true"
+            android:textSize="@dimen/_10ssp"
+            android:fontFamily="@font/sf_pro_bold"
+            app:layout_constraintStart_toEndOf="@id/tvCardType"
+            app:layout_constraintTop_toTopOf="@id/rbCard"
+            android:layout_marginStart="@dimen/_12sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/rbCard" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/gray_light3"
+            android:layout_marginTop="@dimen/_6sdp"
+            app:layout_constraintTop_toBottomOf="@id/tvCardNumber"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

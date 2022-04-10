@@ -27,6 +27,7 @@ import com.mywork.loadigouser.ui.dialogs.ConfirmInfoDialog
 import com.mywork.loadigouser.ui.splash.SplashActivity
 import com.mywork.loadigouser.ui.user.UserActivity
 import com.mywork.loadigouser.ui.user.profile.language.BottomSheetLanguage
+import com.mywork.loadigouser.util.Language
 import com.mywork.loadigouser.util.LocalNotificationType
 import com.mywork.loadigouser.util.Resource
 import dagger.hilt.android.AndroidEntryPoint
@@ -62,11 +63,9 @@ class ProfileFragment : BaseFragment() {
     }
 
     private fun fillData() {
-        val userGson = sharedPreferenceCache.getUser()
-        val user = Gson().fromJson(userGson, User::class.java)
         binding.user = user
 
-        if (sharedPreferenceCache.getLanguage() == "en") binding.tvLanguage.text = getString(R.string.english) else binding.tvLanguage.text = getString(
+        if (sharedPreferenceCache.getLanguage() == Language.ENGLISH.lang) binding.tvLanguage.text = getString(R.string.english) else binding.tvLanguage.text = getString(
                     R.string.arabic)
 
         binding.tvLogout.setOnClickListener {
@@ -83,6 +82,14 @@ class ProfileFragment : BaseFragment() {
                 startActivity(Intent(requireContext() , SplashActivity::class.java))
                 requireActivity().finish()
             }
+        }
+
+        binding.tvOrderHistory.setOnClickListener {
+            navController.navigate(R.id.action_profileFragment_to_historyFragment)
+        }
+
+        binding.tvDeliveryAddresses.setOnClickListener {
+            navController.navigate(R.id.action_profileFragment_to_mapFragment)
         }
     }
 
@@ -111,6 +118,8 @@ class ProfileFragment : BaseFragment() {
         super.onResume()
         (activity as UserActivity).binding.iHeader.tvTitle.text = getString(R.string.profile)
         (activity as UserActivity).binding.iHeader.btnBack.visibility = View.VISIBLE
+        (activity as UserActivity).binding.iHeader.clHeader.visibility = View.VISIBLE
+        (activity as UserActivity).binding.iHeader.btnBell.visibility = View.VISIBLE
     }
 
 

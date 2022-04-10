@@ -52,6 +52,8 @@ class CategoriesFragment : BaseFragment(), CategoriesAdapter.ClickListener {
         super.onViewCreated(view, savedInstanceState)
         (activity as UserActivity).binding.iHeader.tvTitle.text = getString(R.string.categories)
         (activity as UserActivity).binding.iHeader.btnBack.visibility = View.VISIBLE
+        (activity as UserActivity).binding.iHeader.clHeader.visibility = View.VISIBLE
+        (activity as UserActivity).binding.iHeader.btnBell.visibility = View.VISIBLE
         navController = Navigation.findNavController(view)
         binding.lifecycleOwner = this
         binding.adapter = adapter

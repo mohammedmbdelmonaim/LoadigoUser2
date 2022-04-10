@@ -23,15 +23,91 @@
         android:id="@+id/profileFragment"
         android:name="com.mywork.loadigouser.ui.user.profile.ProfileFragment"
         android:label="ProfileFragment"
-        tools:layout="@layout/fragment_profile"/>
+        tools:layout="@layout/fragment_profile">
+        <action
+            android:id="@+id/action_profileFragment_to_mapFragment"
+            app:destination="@id/mapFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_historyFragment"
+            app:destination="@id/historyFragment" />
+    </fragment>
     <fragment
         android:id="@+id/pickAndDeliveryFragment"
         android:name="com.mywork.loadigouser.ui.user.pick_delivery.PickAndDeliveryFragment"
         android:label="PickAndDeliveryFragment"
-        tools:layout="@layout/fragment_pick_delivery"/>
+        tools:layout="@layout/fragment_pick_delivery">
+        <action
+            android:id="@+id/action_pickAndDeliveryFragment_to_mapFragment"
+            app:destination="@id/mapFragment" />
+        <action
+            android:id="@+id/action_pickAndDeliveryFragment_to_courierStepsFragment"
+            app:destination="@id/courierStepsFragment" />
+    </fragment>
     <fragment
         android:id="@+id/paymentFragment"
         android:name="com.mywork.loadigouser.ui.user.payment.PaymentFragment"
         android:label="PaymentFragment"
-        tools:layout="@layout/fragment_payment"/>
+        tools:layout="@layout/fragment_payment">
+        <action
+            android:id="@+id/action_paymentFragment_to_referralFragment"
+            app:destination="@id/referralFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mapFragment"
+        android:name="com.mywork.loadigouser.ui.user.map.MapFragment"
+        android:label="MapFragment"
+        tools:layout="@layout/fragment_map">
+        <argument
+            android:name="location_type"
+            app:argType="integer"
+            android:defaultValue="-1" />
+    </fragment>
+    <fragment
+        android:id="@+id/courierStepsFragment"
+        android:name="com.mywork.loadigouser.ui.user.courier.CourierStepsFragment"
+        android:label="CourierStepsFragment"
+        tools:layout="@layout/fragment_courier_steps">
+        <action
+            android:id="@+id/action_courierStepsFragment_to_pickupAndPaymentFragment"
+            app:destination="@id/pickupAndPaymentFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/pickupAndPaymentFragment"
+        android:name="com.mywork.loadigouser.ui.user.pickup_payment.PickupAndPaymentFragment"
+        android:label="PickupAndPaymentFragment"
+        tools:layout="@layout/fragment_pickup_payment">
+        <action
+            android:id="@+id/action_pickupAndPaymentFragment_to_courierMapFragment"
+            app:destination="@id/courierMapFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/courierMapFragment"
+        android:name="com.mywork.loadigouser.ui.user.courier_map.CourierMapFragment"
+        android:label="CourierMapFragment"
+        tools:layout="@layout/fragment_courier_map">
+        <action
+            android:id="@+id/action_courierMapFragment_to_successFragment"
+            app:destination="@id/successFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/successFragment"
+        android:name="com.mywork.loadigouser.ui.user.success.SuccessFragment"
+        android:label="SuccessFragment"
+        tools:layout="@layout/fragment_success">
+        <action
+            android:id="@+id/action_successFragment_to_historyFragment"
+            app:destination="@id/historyFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/historyFragment"
+        android:name="com.mywork.loadigouser.ui.user.history.HistoryFragment"
+        android:label="HistoryFragment"
+        tools:layout="@layout/fragment_history"/>
+    <fragment
+        android:id="@+id/referralFragment"
+        android:name="com.mywork.loadigouser.ui.user.referral.ReferralFragment"
+        android:label="ReferralFragment"
+        tools:layout="@layout/fragment_referral"/>
+
+
 </navigation>

@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.mywork.loadigouser.ui.dialogs.LoadingIndicatorDialogFragment
 import com.mywork.loadigouser.model.locale.SharedPreferenceCache
+import com.mywork.loadigouser.model.locale.User
 import com.mywork.loadigouser.ui.dialogs.LocalNotificationsDialog
 import com.mywork.loadigouser.ui.dialogs.LocalNotificationsType
 import com.mywork.loadigouser.ui.splash.SplashActivity
@@ -34,6 +35,9 @@ open class BaseFragment : Fragment(), LoadingIndicator,
 
     @Inject
     lateinit var sharedPreferenceCache: SharedPreferenceCache
+
+    @Inject
+    lateinit var user: User
 
     override fun onDestroy() {
         super.onDestroy()

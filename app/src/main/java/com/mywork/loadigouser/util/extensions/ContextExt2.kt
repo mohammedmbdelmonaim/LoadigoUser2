@@ -6,17 +6,20 @@ import android.content.pm.PackageInfo
 import android.content.pm.PackageManager
 import android.content.res.Configuration
 import android.location.LocationManager
+import android.os.Build
 import android.provider.Settings
 import android.text.InputFilter
 import android.text.InputType
 import android.widget.ArrayAdapter
 import android.widget.EditText
 import android.widget.Spinner
+import androidx.annotation.RequiresApi
 import androidx.annotation.StringRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.google.android.material.card.MaterialCardView
 import com.mywork.loadigouser.R
+import com.mywork.loadigouser.ui.dialogs.ConfirmInfoDialog
 import com.mywork.loadigouser.ui.dialogs.LocalNotificationsDialog
 import com.mywork.loadigouser.ui.dialogs.LocalNotificationsType
 import com.mywork.loadigouser.util.LocalNotificationType
@@ -86,5 +89,31 @@ fun Context.getStringByLocale(@StringRes stringRes: Int, locale: Locale): String
     val configuration = Configuration(resources.configuration)
     configuration.setLocale(locale)
     return createConfigurationContext(configuration).resources.getString(stringRes)
+}
+
+@RequiresApi(Build.VERSION_CODES.M)
+fun Context.checkGPSEnabledAndShowRationale(): Boolean {
+
+    var manager: LocationManager = getSystemService(Context.LOCATION_SERVICE) as LocationManager
+    val isEnabled = manager.isProviderEnabled(LocationManager.GPS_PROVIDER)
+
+    if (isEnabled.not()){
+        ConfirmInfoDialog(
+            context = this,
+            info = getString(R.string.cantLocation),
+            positiveText = getString(R.string.open),
+            showPositiveButton = true,
+            positiveClickAction = {
+                startActivity(Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS))
+            },
+            negativeText = getString(R.string.cancel),
+            showNegativeButton = true,
+            negativeClickAction = {
+            },
+            isCancelable = false
+        ).show()
+    }
+
+    return isEnabled
 }
 
