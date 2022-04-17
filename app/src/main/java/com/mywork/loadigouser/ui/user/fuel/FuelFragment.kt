@@ -28,17 +28,12 @@ import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
-class FuelFragment : BaseFragment(), ServicesAdapter.ClickListener, OnMapReadyCallback ,
-    GoogleMap.OnCameraIdleListener, GoogleMap.OnCameraMoveListener {
+class FuelFragment : BaseFragment() {
     private var _binding: FragmentFuelBinding? = null
     private val binding get() = _binding!!
 
     private lateinit var navController: NavController
-    private val viewModel: MainViewModel by viewModels()
-    private var mFusedLocationClient: FusedLocationProviderClient? = null
-    private var latitude:Double = 0.0
-    private var longitude:Double = 0.0
-    lateinit var mGoogleMap: GoogleMap
+    private val viewModel: FuelViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -52,10 +47,7 @@ class FuelFragment : BaseFragment(), ServicesAdapter.ClickListener, OnMapReadyCa
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        lifecycleScope.launch { viewModel.getServices()}
-        var mapFrag: SupportMapFragment = (childFragmentManager.findFragmentById(R.id.map_fragment) as SupportMapFragment?)!!
-        mapFrag?.getMapAsync(this)
-        mFusedLocationClient = LocationServices.getFusedLocationProviderClient(requireContext())
+
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -69,7 +61,7 @@ class FuelFragment : BaseFragment(), ServicesAdapter.ClickListener, OnMapReadyCa
 
     override fun onResume() {
         super.onResume()
-        (activity as UserActivity).binding.iHeader.tvTitle.text = "Fuel"
+        (activity as UserActivity).binding.iHeader.tvTitle.text = getString(R.string.fuel)
         (activity as UserActivity).binding.iHeader.btnBack.visibility = View.GONE
     }
 
@@ -99,31 +91,4 @@ class FuelFragment : BaseFragment(), ServicesAdapter.ClickListener, OnMapReadyCa
         super.onDestroyView()
         _binding = null
     }
-
-    override fun onClickService(position: Int) {
-        navController.navigate(R.id.action_mainFragment_to_categoriesFragment)
-    }
-
-    override fun onMapReady(googleMap: GoogleMap) {
-        mGoogleMap = googleMap
-        mGoogleMap.mapType = GoogleMap.MAP_TYPE_NORMAL
-
-//        mFusedLocationClient.lastLocation
-    }
-
-    override fun onCameraMove() {
-        // mGoogleMap.clear()
-        // iv_marker?.visibility = View.VISIBLE
-
-
-
-    }
-
-    override fun onCameraIdle() {
-        latitude = mGoogleMap.cameraPosition.target.latitude
-        longitude = mGoogleMap.cameraPosition.target.longitude
-
-//        val address = getCompleteAddressString(latitude,longitude)
-    }
-
 }

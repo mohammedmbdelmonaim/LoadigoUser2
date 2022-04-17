@@ -12,14 +12,14 @@ import javax.inject.Inject
 
 class CategoriesRepository @Inject constructor(private val apiService: ApiService): BaseRepository() {
 
-    suspend fun getAllCategories(): BaseResponse<CategoriesResponse> {
+    suspend fun getCategoriesByServiceId(serviceId: Int): BaseResponse<CategoriesResponse> {
         return try {
-            val response = apiService.getAllCategories()
+            val response = apiService.getCategoriesByServiceId(serviceId)
             this.handleResponse(response)
         } catch (e: Throwable) {
             if (e is StreamResetException) {
                 if (e.errorCode == ErrorCode.CANCEL) {
-                    getAllCategories()
+                    getCategoriesByServiceId(serviceId)
                 } else {
                     this.handleErrors(e)
                 }

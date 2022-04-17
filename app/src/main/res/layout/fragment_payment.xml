@@ -18,7 +18,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <androidx.appcompat.widget.LinearLayoutCompat
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/llMain"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/_130sdp"
@@ -27,6 +27,7 @@
                 app:layout_constraintTop_toTopOf="parent">
 
                 <TextView
+                    android:id="@+id/txtWalletHider"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -34,19 +35,23 @@
                     android:fontFamily="@font/sf_pro_regular"
                     android:text="@string/wallet"
                     android:textColor="@color/white"
-                    android:textSize="@dimen/_30ssp" />
+                    android:textSize="@dimen/_30ssp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginStart="-30dp"
-                    android:layout_marginTop="-30dp"
                     android:fontFamily="@font/sf_pro_regular"
                     android:text="@string/wallet"
+                    android:layout_marginTop="-25dp"
                     android:textColor="@color/white"
-                    android:textSize="@dimen/_16ssp" />
-            </androidx.appcompat.widget.LinearLayoutCompat>
+                    android:textSize="@dimen/_16ssp"
+                    app:layout_constraintStart_toStartOf="@id/txtWalletHider"
+                    app:layout_constraintTop_toBottomOf="@id/txtWalletHider" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/mcWallet"
@@ -58,7 +63,7 @@
                 app:cardElevation="@dimen/_8sdp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.18">
+                app:layout_constraintVertical_bias="0.21">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"

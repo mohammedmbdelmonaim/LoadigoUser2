@@ -29,11 +29,14 @@ import com.mywork.loadigouser.util.Resource
 import com.skydoves.powerspinner.SpinnerGravity
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
 @AndroidEntryPoint
 class CourierStepsFragment : BaseFragment() {
     private var _binding: FragmentCourierStepsBinding? = null
     private val binding get() = _binding!!
+    @Inject
+    lateinit var user: User
 
     private lateinit var navController: NavController
     private val viewModel: MainViewModel by viewModels()

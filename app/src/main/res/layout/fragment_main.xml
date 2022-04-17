@@ -4,102 +4,110 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="user"
             type="com.mywork.loadigouser.model.locale.User" />
+
         <variable
             name="adapter"
             type="com.mywork.loadigouser.ui.user.main.ServicesAdapter" />
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:fillViewport="true">
 
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guidelineStart"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintGuide_begin="@dimen/_20sdp" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guidelineTop"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_begin="@dimen/_20sdp" />
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guidelineStart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="@dimen/_20sdp" />
 
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guidelineBottom"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_end="@dimen/_20sdp" />
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guidelineTop"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_begin="@dimen/_20sdp" />
 
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guidelineEnd"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintGuide_end="@dimen/_20sdp" />
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guidelineBottom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_end="@dimen/_20sdp" />
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tvWelcome"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            tools:text="@{String.format(@string/welcome,user.fullName)}"
-            app:layout_constraintStart_toStartOf="@id/guidelineStart"
-            app:layout_constraintTop_toTopOf="@id/guidelineTop"
-            android:textColor="@color/txt_color"
-            android:textSize="@dimen/_16ssp"
-            android:fontFamily="@font/sf_pro_semibold" />
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guidelineEnd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_end="@dimen/_20sdp" />
 
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/mcMain"
-            android:layout_width="0dp"
-            android:layout_height="@dimen/_120sdp"
-            app:layout_constraintStart_toStartOf="@id/guidelineStart"
-            app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
-            app:layout_constraintTop_toBottomOf="@id/tvWelcome"
-            android:layout_marginTop="@dimen/_12sdp"
-            app:cardElevation="@dimen/_8sdp"
-            app:cardCornerRadius="@dimen/_12sdp">
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvWelcome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/sf_pro_semibold"
+                android:textColor="@color/txt_color"
+                android:textSize="@dimen/_16ssp"
+                app:layout_constraintStart_toStartOf="@id/guidelineStart"
+                app:layout_constraintTop_toTopOf="@id/guidelineTop"
+                tools:text="@{String.format(@string/welcome,user.fullName)}" />
 
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/imgMain"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/main_img" />
-        </com.google.android.material.card.MaterialCardView>
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/mcMain"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_120sdp"
+                android:layout_marginTop="@dimen/_12sdp"
+                app:cardCornerRadius="@dimen/_12sdp"
+                app:cardElevation="@dimen/_8sdp"
+                app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+                app:layout_constraintStart_toStartOf="@id/guidelineStart"
+                app:layout_constraintTop_toBottomOf="@id/tvWelcome">
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/txtChoose"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/choose_your_service"
-            android:layout_marginTop="@dimen/_12sdp"
-            app:layout_constraintStart_toStartOf="@id/guidelineStart"
-            app:layout_constraintTop_toBottomOf="@id/mcMain"
-            android:textColor="@color/txt_color"
-            android:textSize="@dimen/_12ssp"
-            android:fontFamily="@font/sf_pro_semibold" />
+                <com.denzcoskun.imageslider.ImageSlider
+                    android:id="@+id/imageSlider"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:iss_auto_cycle="true" />
+            </com.google.android.material.card.MaterialCardView>
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rvServices"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:adapter="@{adapter}"
-            android:orientation="vertical"
-            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-            app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
-            android:layout_marginTop="@dimen/_8sdp"
-            app:spanCount="2"
-            app:layout_constraintStart_toStartOf="@id/guidelineStart"
-            app:layout_constraintTop_toBottomOf="@+id/txtChoose"
-            tools:itemCount="4"
-            tools:listitem="@layout/item_service" />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtChoose"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:fontFamily="@font/sf_pro_semibold"
+                android:text="@string/choose_your_service"
+                android:textColor="@color/txt_color"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintStart_toStartOf="@id/guidelineStart"
+                app:layout_constraintTop_toBottomOf="@id/mcMain" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvServices"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:adapter="@{adapter}"
+                android:orientation="vertical"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+                app:layout_constraintStart_toStartOf="@id/guidelineStart"
+                app:layout_constraintTop_toBottomOf="@+id/txtChoose"
+                app:spanCount="2"
+                tools:itemCount="4"
+                tools:listitem="@layout/item_service" />
 
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
 </layout>

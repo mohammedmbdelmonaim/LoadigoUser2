@@ -30,6 +30,11 @@ class UserActivity : BaseActivity() {
                 navController.navigateUp()
         }
         NavigationUI.setupWithNavController(binding.bottomNavigation, navController)
+
+
+        binding.iHeader.btnBell.setOnClickListener {
+            navController.navigate(R.id.action_global_notificationsFragment)
+        }
     }
 
     override fun onDestroy() {

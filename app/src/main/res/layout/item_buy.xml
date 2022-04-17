@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_8sdp"
+        android:layout_marginBottom="@dimen/_8sdp"
+        android:background="@drawable/bg_location"
+        android:orientation="horizontal"
+        android:padding="@dimen/_12sdp">
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@null"
+            android:fontFamily="@font/sf_pro_regular"
+            android:hint="Add your item"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_10ssp" />
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnPlus"
+            style="@style/Widget.App.Button.OutlinedButton.IconOnly.Rounded"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/gray_light3"
+            android:visibility="visible"
+            app:icon="@drawable/ic_plus"
+            app:iconTint="@color/black"
+            app:layout_constraintBottom_toBottomOf="parent"
+
+            app:layout_constraintEnd_toStartOf="@id/btnMessage"
+            app:layout_constraintTop_toTopOf="parent"
+            app:rippleColor="@color/black"
+            app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.MyApp.Button.Circle"
+            app:strokeWidth="0dp" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_12sdp"
+            android:fontFamily="@font/sf_pro_semibold"
+            android:text="1"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14ssp" />
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnMinus"
+            style="@style/Widget.App.Button.OutlinedButton.IconOnly.Rounded"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/bg_btn"
+            android:visibility="visible"
+            app:icon="@drawable/ic_minus"
+            app:iconTint="@color/black"
+            app:layout_constraintBottom_toBottomOf="parent"
+
+            app:layout_constraintEnd_toStartOf="@id/btnMessage"
+            app:layout_constraintTop_toTopOf="parent"
+            app:rippleColor="@color/black"
+            app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.MyApp.Button.Circle"
+            app:strokeWidth="0dp" />
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</layout>

@@ -13,12 +13,29 @@
         <action
             android:id="@+id/action_mainFragment_to_categoriesFragment"
             app:destination="@id/categoriesFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_towTruckFragment"
+            app:destination="@id/towTruckFragment" />
     </fragment>
     <fragment
         android:id="@+id/categoriesFragment"
         android:name="com.mywork.loadigouser.ui.user.categories.CategoriesFragment"
         android:label="CategoriesFragment"
-        tools:layout="@layout/fragment_categories"/>
+        tools:layout="@layout/fragment_categories">
+        <argument
+            android:name="service"
+            app:argType="com.mywork.loadigouser.model.remote.response.user.Service" />
+        <action
+            android:id="@+id/action_categoriesFragment_to_pickAndDeliveryFragment"
+            app:destination="@id/pickAndDeliveryFragment" />
+        <action
+            android:id="@+id/action_categoriesFragment_to_fuelFragment"
+            app:destination="@id/fuelFragment" />
+
+        <action
+            android:id="@+id/action_categoriesFragment_to_buyPickAndDeliveryFragment"
+            app:destination="@id/buyPickAndDeliveryFragment" />
+    </fragment>
     <fragment
         android:id="@+id/profileFragment"
         android:name="com.mywork.loadigouser.ui.user.profile.ProfileFragment"
@@ -30,6 +47,21 @@
         <action
             android:id="@+id/action_profileFragment_to_historyFragment"
             app:destination="@id/historyFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_aboutFragment"
+            app:destination="@id/aboutFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_helpFragment"
+            app:destination="@id/helpFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_notificationsFragment"
+            app:destination="@id/notificationsFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_contactUsFragment"
+            app:destination="@id/contactUsFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_feedBackFragment"
+            app:destination="@id/feedBackFragment" />
     </fragment>
     <fragment
         android:id="@+id/pickAndDeliveryFragment"
@@ -108,6 +140,65 @@
         android:name="com.mywork.loadigouser.ui.user.referral.ReferralFragment"
         android:label="ReferralFragment"
         tools:layout="@layout/fragment_referral"/>
+    <fragment
+        android:id="@+id/fuelFragment"
+        android:name="com.mywork.loadigouser.ui.user.fuel.FuelFragment"
+        android:label="FuelFragment"
+        tools:layout="@layout/fragment_fuel"/>
+    <fragment
+        android:id="@+id/towTruckFragment"
+        android:name="com.mywork.loadigouser.ui.user.tow_truck.TowTruckFragment"
+        android:label="TowTruckFragment"
+        tools:layout="@layout/fragment_two_truck"/>
+    <fragment
+        android:id="@+id/buyPickAndDeliveryFragment"
+        android:name="com.mywork.loadigouser.ui.user.buy_pick_delivery.PickAndDeliveryFragment"
+        android:label="PickAndDeliveryFragment"
+        tools:layout="@layout/fragment_buy_pick_delivery">
+        <action
+            android:id="@+id/action_buyPickAndDeliveryFragment_to_buyStepsFragment"
+            app:destination="@id/buyStepsFragment" />
+        <action
+            android:id="@+id/action_buyPickAndDeliveryFragment_to_mapFragment"
+            app:destination="@id/mapFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/buyStepsFragment"
+        android:name="com.mywork.loadigouser.ui.user.buy.BuyStepsFragment"
+        android:label="BuyStepsFragment"
+        tools:layout="@layout/fragment_buy_steps">
+        <action
+            android:id="@+id/action_buyStepsFragment_to_pickupAndPaymentFragment"
+            app:destination="@id/pickupAndPaymentFragment" />
+    </fragment>
+
+    <action android:id="@+id/action_global_notificationsFragment"
+        app:destination="@id/notificationsFragment" />
+    <fragment
+        android:id="@+id/notificationsFragment"
+        android:name="com.mywork.loadigouser.ui.user.notifications.NotificationsFragment"
+        android:label="NotificationsFragment"
+        tools:layout="@layout/fragment_notifications"/>
+    <fragment
+        android:id="@+id/aboutFragment"
+        android:name="com.mywork.loadigouser.ui.user.profile.about.AboutFragment"
+        android:label="AboutFragment"
+        tools:layout="@layout/fragment_about"/>
+    <fragment
+        android:id="@+id/helpFragment"
+        android:name="com.mywork.loadigouser.ui.user.profile.help.HelpFragment"
+        android:label="HelpFragment"
+        tools:layout="@layout/fragment_help"/>
+    <fragment
+        android:id="@+id/contactUsFragment"
+        android:name="com.mywork.loadigouser.ui.user.profile.contact.ContactUsFragment"
+        android:label="ContactUsFragment"
+        tools:layout="@layout/fragment_contact_us"/>
+    <fragment
+        android:id="@+id/feedBackFragment"
+        android:name="com.mywork.loadigouser.ui.user.profile.feedback.FeedBackFragment"
+        android:label="FeedBackFragment"
+        tools:layout="@layout/fragment_feedback"/>
 
 
 </navigation>

@@ -14,6 +14,7 @@ import retrofit2.Response
 import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.POST
+import retrofit2.http.Query
 
 interface ApiService {
     @POST("user/login")
@@ -31,7 +32,7 @@ interface ApiService {
     @GET("service/all")
     suspend fun getAllServices(): Response<BaseResponse<ServiceResponse>>
 
-    @GET("category/all")
-    suspend fun getAllCategories(): Response<BaseResponse<CategoriesResponse>>
+    @GET("category/findByServiceId")
+    suspend fun getCategoriesByServiceId(@Query("service_id")serviceId: Int): Response<BaseResponse<CategoriesResponse>>
 
 }

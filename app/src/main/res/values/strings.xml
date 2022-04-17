@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">LoadigoUser</string>
+    <string name="app_name">Loadigo</string>
     <string name="onboarding_title_1">Choose Destination</string>
     <string name="onboarding_desc_1">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut "</string>
     <string name="onboarding_title_2">Make Payment</string>
@@ -7,6 +7,7 @@
     <string name="onboarding_desc_3">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut "</string>
     <string name="onboarding_title_3">Delivering</string>
     <string name="next">Next</string>
+    <string name = "delivery_your_items_anywhere_you_want">Delivery your items to anywhere you want</string>
     <string name="sign_up">Sign up</string>
     <string name="sign_in">Sign In</string>
     <string name="skip">Skip</string>
@@ -37,7 +38,7 @@
     <string name="choose_your_service">Choose your service</string>
     <string name="insert_correct_otp">Please insert correct otp</string>
     <string name="sec_left">%s Sec Left</string>
-    <string name="permission_string">هذه الصلاحية يجب تفعيلها</string>
+    <string name="permission_string">This permission is needed</string>
     <string name="birthdate">BirthDate</string>
     <string name="enter_birth">Enter Your BirthDate</string>
     <string name="chose_your_profile">Choose Your Profile Photo</string>
@@ -71,7 +72,6 @@
     <string name="open">Open</string>
     <string name="delivery_location">Delivery location</string>
     <string name="no_address_returned">No Address Returned</string>
-    <string name="cantLocation"><![CDATA["    <string name=\"cantLocation\">Can't Access your Location , Please open your location from device settings</string> "]]></string>
     <string name="enter_manual">Enter Manual</string>
     <string name="map">Map</string>
     <string name="select_pickup">Please Select Pickup Location</string>
@@ -120,4 +120,34 @@
     <string name="my_booking">My Booking</string>
     <string name="pickup_payment">Pickup and Payment</string>
     <string name="address_book">Address Book</string>
+    <string name="tow_truck">Tow Truck</string>
+    <string name="fuel">Fuel</string>
+    <string name="date">Date</string>
+    <string name="time">Time</string>
+    <string name="notes">Notes</string>
+    <string name="dd_mm_yyy">dd-mm-yyy</string>
+    <string name="hh_mm">HH/MM</string>
+    <string name="book_service">Book Service</string>
+    <string name="fuel_type">Fuel Type</string>
+    <string name="buy_anything_from_any_store_or_resturant_in_your_city">Buy anything from any Store or Resturant in your city</string>
+    <string name="store_restaurant_location">Store/ Restaurant Location</string>
+    <string name="pickup_date_and_time">Pickup Date and Time</string>
+    <string name="now">Now</string>
+    <string name="about">About</string>
+    <string name="search_something">Search Something</string>
+    <string name="need_some_help_with_front">Need Some help with front?</string>
+    <string name="quick_contact">Quick Contact</string>
+    <string name="name">Name</string>
+    <string name="contact">Contact Us</string>
+    <string name="email">Email</string>
+    <string name="choose_your">Choose your</string>
+    <string name="message">Message</string>
+    <string name="send">Send</string>
+    <string name="suggestion">Suggestion</string>
+    <string name="write_your_comment">Write your comment</string>
+    <string name="_120_words">120 words</string>
+    <string name="give_us_your_rating">Give us your rating</string>
+    <string name="how_do_you_feel">How do you feel?</string>
+    <string name="give_us_feedback">Give us Feedback</string>
+    <string name="cannot_access_location">Can\'t Access your Location , Please open your location from device settings</string>
 </resources>

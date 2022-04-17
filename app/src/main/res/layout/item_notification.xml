@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/_15sdp"
+        android:layout_marginHorizontal="@dimen/_16sdp">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/mcNotification"
+            android:layout_width="@dimen/_60sdp"
+            android:layout_height="@dimen/_50sdp"
+            android:elevation="@dimen/_4sdp"
+            app:cardCornerRadius="@dimen/_4sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivNotification"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"
+                app:srcCompat="@drawable/main_img" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <TextView
+            android:id="@+id/txtTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:fontFamily="@font/sf_pro_semibold"
+            android:text="Track your Order Now"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_10ssp"
+            app:layout_constraintBottom_toTopOf="@id/txtTime"
+            app:layout_constraintStart_toEndOf="@id/mcNotification"
+            app:layout_constraintTop_toTopOf="@id/mcNotification" />
+
+        <TextView
+            android:id="@+id/txtTime"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:fontFamily="@font/sf_pro_semibold"
+            android:text="25  Mints ago"
+            android:drawableStart="@drawable/ic_clock"
+            android:drawablePadding="@dimen/_6sdp"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_10ssp"
+            app:layout_constraintBottom_toBottomOf="@id/mcNotification"
+            app:layout_constraintStart_toEndOf="@id/mcNotification"
+            app:layout_constraintTop_toBottomOf="@id/txtTitle" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_1sdp"
+            android:background="@color/black"
+            android:alpha="0.1"
+            app:layout_constraintTop_toBottomOf="@id/mcNotification"
+            android:layout_marginTop="@dimen/_8sdp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/bg_screens"
+        android:orientation="vertical">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/mcLocations"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_16sdp"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="@dimen/_8sdp"
+            app:cardElevation="@dimen/_8sdp"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivBlue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_8sdp"
+                    android:layout_marginTop="@dimen/_16sdp"
+                    app:layout_constraintBottom_toTopOf="@id/ivLine"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_circle_blue" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivLine"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_30sdp"
+                    app:layout_constraintBottom_toTopOf="@id/ivRed"
+                    app:layout_constraintEnd_toEndOf="@id/ivBlue"
+                    app:layout_constraintStart_toStartOf="@id/ivBlue"
+                    app:layout_constraintTop_toBottomOf="@id/ivBlue"
+                    app:srcCompat="@drawable/line" />
+
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivRed"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_8sdp"
+                    android:layout_marginBottom="@dimen/_16sdp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/ivLine"
+                    app:srcCompat="@drawable/ic_circle_red" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txtPickup"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_12sdp"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:fontFamily="@font/sf_pro_bold"
+                    android:text="@string/pickup_point"
+                    android:textColor="@color/gray_light3"
+                    android:textSize="@dimen/_10ssp"
+                    app:layout_constraintStart_toEndOf="@id/ivBlue"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvPickup"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/sf_pro_semibold"
+                    android:maxLines="1"
+                    android:text="Enter Product Pickup Location"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_11ssp"
+                    app:layout_constraintEnd_toEndOf="@id/vLine"
+                    app:layout_constraintHorizontal_bias="0"
+                    app:layout_constraintStart_toStartOf="@id/txtPickup"
+                    app:layout_constraintTop_toBottomOf="@id/txtPickup" />
+
+                <View
+                    android:id="@+id/vLine"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:layout_marginEnd="@dimen/_16sdp"
+                    android:background="@color/gray_light3"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/txtPickup"
+                    app:layout_constraintTop_toBottomOf="@id/tvPickup" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txtDelivery"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    android:fontFamily="@font/sf_pro_bold"
+                    android:text="@string/delivery_point"
+                    android:textColor="@color/gray_light3"
+                    android:textSize="@dimen/_10ssp"
+                    app:layout_constraintStart_toStartOf="@id/txtPickup"
+                    app:layout_constraintTop_toBottomOf="@id/vLine" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvDelivery"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/sf_pro_semibold"
+                    android:maxLines="1"
+                    android:text="Enter Product Delivery Location"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_11ssp"
+                    app:layout_constraintEnd_toEndOf="@id/vLine"
+                    app:layout_constraintHorizontal_bias="0"
+                    app:layout_constraintStart_toStartOf="@id/txtPickup"
+                    app:layout_constraintTop_toBottomOf="@id/txtDelivery" />
+
+                <View
+                    android:id="@+id/vLine2"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:layout_marginEnd="@dimen/_16sdp"
+                    android:layout_marginBottom="@dimen/_8sdp"
+                    android:background="@color/gray_light3"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/txtPickup"
+                    app:layout_constraintTop_toBottomOf="@id/tvDelivery" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_16sdp"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="@dimen/_8sdp"
+            app:cardElevation="@dimen/_8sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:strokeColor="@color/black"
+            app:strokeWidth="@dimen/_1sdp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+
+                android:layout_height="match_parent">
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guidelineStart"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_begin="@dimen/_16sdp" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guidelineTop"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_begin="@dimen/_12sdp" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guidelineBottom"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_end="@dimen/_12sdp" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guidelineEnd"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_end="@dimen/_16sdp" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guidelineCenter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.5" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txtStation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/sf_pro_regular"
+                    android:text="Safada filling Station"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12ssp"
+                    app:layout_constraintStart_toStartOf="@id/guidelineStart"
+                    app:layout_constraintTop_toTopOf="@id/guidelineTop" />
+
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivTowTruck"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_110sdp"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:scaleType="fitXY"
+                    app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+                    app:layout_constraintStart_toStartOf="@id/guidelineStart"
+                    app:layout_constraintTop_toBottomOf="@id/txtStation"
+                    app:srcCompat="@drawable/tow_truck" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txtDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:fontFamily="@font/sf_pro_regular"
+                    android:text="@string/date"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12ssp"
+                    app:layout_constraintStart_toStartOf="@id/guidelineStart"
+                    app:layout_constraintTop_toBottomOf="@id/ivTowTruck" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvDate"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_35sdp"
+                    android:layout_marginEnd="@dimen/_8sdp"
+                    android:background="@drawable/bg_date_time"
+                    android:fontFamily="@font/sf_pro_regular"
+                    android:gravity="center"
+                    android:hint="@string/dd_mm_yyy"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12ssp"
+                    app:layout_constraintEnd_toEndOf="@id/guidelineCenter"
+                    app:layout_constraintStart_toStartOf="@id/guidelineStart"
+                    app:layout_constraintTop_toBottomOf="@id/txtDate" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:fontFamily="@font/sf_pro_regular"
+                    android:text="@string/time"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12ssp"
+                    app:layout_constraintStart_toStartOf="@id/guidelineCenter"
+                    app:layout_constraintTop_toBottomOf="@id/ivTowTruck" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvTime"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_35sdp"
+                    android:background="@drawable/bg_date_time"
+                    android:fontFamily="@font/sf_pro_regular"
+                    android:gravity="center"
+                    android:hint="@string/hh_mm"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12ssp"
+                    app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+                    app:layout_constraintStart_toStartOf="@id/guidelineCenter"
+                    app:layout_constraintTop_toBottomOf="@id/txTime" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txtNote"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:fontFamily="@font/sf_pro_regular"
+                    android:text="@string/notes"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12ssp"
+                    app:layout_constraintStart_toStartOf="@id/txtStation"
+                    app:layout_constraintTop_toBottomOf="@id/tvDate" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/etNote"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_date_time"
+                    android:fontFamily="@font/sf_pro_regular"
+                    android:gravity="top"
+                    android:inputType="textMultiLine"
+                    android:lines="2"
+                    android:padding="@dimen/_4sdp"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_10ssp"
+                    app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+                    app:layout_constraintStart_toStartOf="@id/guidelineStart"
+                    app:layout_constraintTop_toBottomOf="@id/txtNote" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnContinue"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_50sdp"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:fontFamily="@font/sf_pro_semibold"
+                    android:text="@string/book_service"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_12ssp"
+                    app:backgroundTint="@color/bg_btn"
+                    app:cornerRadius="@dimen/_8sdp"
+                    app:layout_constraintBottom_toBottomOf="@id/guidelineBottom"
+                    app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+                    app:layout_constraintStart_toStartOf="@id/guidelineStart"
+                    app:layout_constraintTop_toBottomOf="@id/etNote" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:scaleType="matrix"
+            android:src="@drawable/map"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/mcLocations" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -2,20 +2,16 @@ package com.mywork.loadigouser.ui.user.courier_map
 
 import android.Manifest
 import android.annotation.SuppressLint
-import android.location.Address
-import android.location.Geocoder
 import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.WindowManager
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
-import androidx.navigation.fragment.navArgs
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
 import com.google.android.gms.maps.CameraUpdateFactory
@@ -23,19 +19,15 @@ import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
-import com.google.android.gms.maps.model.MarkerOptions
 import com.google.gson.Gson
 import com.mywork.loadigouser.R
 import com.mywork.loadigouser.base.BaseFragment
 import com.mywork.loadigouser.databinding.FragmentCourierMapBinding
-import com.mywork.loadigouser.databinding.FragmentFuelBinding
-import com.mywork.loadigouser.databinding.FragmentMainBinding
-import com.mywork.loadigouser.databinding.FragmentMapBinding
 import com.mywork.loadigouser.model.locale.User
 import com.mywork.loadigouser.ui.user.UserActivity
 import com.mywork.loadigouser.ui.user.main.MainViewModel
 import com.mywork.loadigouser.ui.user.main.ServicesAdapter
-import com.mywork.loadigouser.util.*
+import com.mywork.loadigouser.util.Constants
 import com.mywork.loadigouser.util.extensions.checkGPSEnabledAndShowRationale
 import com.vmadalin.easypermissions.EasyPermissions
 import com.vmadalin.easypermissions.dialogs.SettingsDialog
@@ -44,8 +36,6 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-import java.util.*
-import javax.inject.Inject
 
 @AndroidEntryPoint
 class CourierMapFragment : BaseFragment(), ServicesAdapter.ClickListener, OnMapReadyCallback,

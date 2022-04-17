@@ -14,7 +14,7 @@ class HistoryRepository @Inject constructor(private val apiService: ApiService):
 
     suspend fun getAllCategories(): BaseResponse<CategoriesResponse> {
         return try {
-            val response = apiService.getAllCategories()
+            val response = apiService.getCategoriesByServiceId(1)
             this.handleResponse(response)
         } catch (e: Throwable) {
             if (e is StreamResetException) {

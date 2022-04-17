@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+    id 'kotlin-parcelize'
     id 'kotlin-kapt'
     id 'dagger.hilt.android.plugin'
     id 'com.google.gms.google-services'
@@ -18,7 +19,7 @@ android {
 
     defaultConfig {
         applicationId "com.mywork.loadigouser"
-        minSdk 21
+        minSdk 23
         targetSdk 32
         versionCode 1
         versionName "1.0"
@@ -143,6 +144,9 @@ dependencies {
 
     implementation "com.github.skydoves:powerspinner:1.1.9"
 
+    implementation 'com.github.ome450901:SimpleRatingBar:1.5.1'
+
+    implementation 'com.github.denzcoskun:ImageSlideshow:0.1.0'
 
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'

@@ -5,6 +5,6 @@ import androidx.recyclerview.widget.DiffUtil
 import com.google.gson.annotations.SerializedName
 
 class CategoriesResponse(
-    @SerializedName("categories")
+    @SerializedName("category")
     val categories: List<Category>? = null
 )

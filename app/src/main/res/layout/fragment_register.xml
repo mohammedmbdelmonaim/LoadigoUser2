@@ -55,7 +55,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                app:layout_constraintGuide_percent="0.876" />
+                app:layout_constraintGuide_percent="0.866" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/txtSignIn"
@@ -185,32 +185,58 @@
                 android:background="#80EDB550"
                 app:layout_constraintBottom_toBottomOf="parent" />
 
-            <androidx.appcompat.widget.AppCompatImageView
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnFaceBook"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/facebook_icon"
+                android:layout_width="@dimen/_40sdp"
+                android:layout_height="@dimen/_40sdp"
+                style="@style/Widget.App.Button.OutlinedButton.IconOnly.Rounded"
+                app:icon="@drawable/ic_facebook_logo_126"
+                app:rippleColor="@color/black"
+                android:visibility="visible"
+                app:iconGravity="textStart"
+                app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.MyApp.Button.Circle"
+                android:backgroundTint="#475993"
+                app:iconTint="@color/white"
+                app:strokeWidth="0dp"
                 app:layout_constraintEnd_toStartOf="@id/btnTwitter"
                 app:layout_constraintStart_toEndOf="@id/btnGoogle"
-                app:layout_constraintTop_toTopOf="@id/guidelineBottomView" />
+                app:layout_constraintTop_toTopOf="@id/guidelineBottomView"/>
 
-            <androidx.appcompat.widget.AppCompatImageView
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnGoogle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/google_plus_icon"
+                android:layout_width="@dimen/_40sdp"
+                android:layout_height="@dimen/_40sdp"
+                style="@style/Widget.App.Button.OutlinedButton.IconOnly.Rounded"
+                app:icon="@drawable/ic_google_plus"
+                app:rippleColor="@color/black"
+                android:visibility="visible"
+                app:iconGravity="textStart"
+                app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.MyApp.Button.Circle"
+                android:backgroundTint="#F44336"
+                app:iconTint="@color/white"
+                app:strokeWidth="0dp"
                 app:layout_constraintEnd_toStartOf="@id/btnFaceBook"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@id/guidelineBottomView" />
 
-            <androidx.appcompat.widget.AppCompatImageView
+
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnTwitter"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/twitter_icon"
+                android:layout_width="@dimen/_40sdp"
+                android:layout_height="@dimen/_40sdp"
+                style="@style/Widget.App.Button.OutlinedButton.IconOnly.Rounded"
+                app:icon="@drawable/ic_twitter"
+                app:rippleColor="@color/black"
+                android:visibility="visible"
+                app:iconGravity="textStart"
+                app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.MyApp.Button.Circle"
+                android:backgroundTint="#1DA1F2"
+                app:iconTint="@color/white"
+                app:strokeWidth="0dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/btnFaceBook"
                 app:layout_constraintTop_toTopOf="@id/guidelineBottomView" />
+
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

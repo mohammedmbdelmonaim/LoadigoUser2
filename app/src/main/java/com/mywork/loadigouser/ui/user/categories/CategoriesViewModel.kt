@@ -13,9 +13,9 @@ class CategoriesViewModel @Inject constructor(private val repository: Categories
     private val categoriesMutableLiveData = SingleLiveData<Resource<List<Category>>>()
     val categoriesLiveData: SingleLiveData<Resource<List<Category>>> get() = categoriesMutableLiveData
 
-    suspend fun getAllCategories() {
+    suspend fun getCategoriesByServiceId(serviceId: Int) {
         categoriesMutableLiveData.value = Resource.Loading()
-        val response = repository.getAllCategories()
+        val response = repository.getCategoriesByServiceId(serviceId)
         if (response.statusCode == 200) {
             categoriesMutableLiveData.value = Resource.Success(response.data?.categories!!,response.message!!)
         } else {

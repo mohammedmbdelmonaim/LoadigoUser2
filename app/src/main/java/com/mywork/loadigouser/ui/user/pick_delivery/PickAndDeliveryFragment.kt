@@ -20,6 +20,7 @@ import com.mywork.loadigouser.ui.user.categories.CategoriesViewModel
 import com.mywork.loadigouser.util.LocalNotificationType
 import com.mywork.loadigouser.util.LocationType
 import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
 @AndroidEntryPoint
 class PickAndDeliveryFragment : BaseFragment() {
@@ -27,6 +28,8 @@ class PickAndDeliveryFragment : BaseFragment() {
     private val binding get() = _binding!!
 
     private lateinit var navController: NavController
+    @Inject
+    lateinit var user: User
 
     override fun onCreateView(
         inflater: LayoutInflater,

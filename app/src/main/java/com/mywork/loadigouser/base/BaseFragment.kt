@@ -36,9 +36,6 @@ open class BaseFragment : Fragment(), LoadingIndicator,
     @Inject
     lateinit var sharedPreferenceCache: SharedPreferenceCache
 
-    @Inject
-    lateinit var user: User
-
     override fun onDestroy() {
         super.onDestroy()
         this.hideLoadingIndicator()

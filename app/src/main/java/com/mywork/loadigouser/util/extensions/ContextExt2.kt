@@ -100,7 +100,7 @@ fun Context.checkGPSEnabledAndShowRationale(): Boolean {
     if (isEnabled.not()){
         ConfirmInfoDialog(
             context = this,
-            info = getString(R.string.cantLocation),
+            info = getString(R.string.cannot_access_location),
             positiveText = getString(R.string.open),
             showPositiveButton = true,
             positiveClickAction = {

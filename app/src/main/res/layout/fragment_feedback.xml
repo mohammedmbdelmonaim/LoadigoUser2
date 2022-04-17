@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guidelineStart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="@dimen/_20sdp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guidelineTop"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_begin="@dimen/_20sdp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guidelineBottom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_end="@dimen/_20sdp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guidelineEnd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_end="@dimen/_20sdp" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txt1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/sf_pro_bold"
+                android:text="@string/how_do_you_feel"
+                android:textColor="@color/bg_btn_blue"
+                android:textSize="@dimen/_16ssp"
+                app:layout_constraintStart_toStartOf="@id/guidelineStart"
+                app:layout_constraintTop_toTopOf="@id/guidelineTop" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txt2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:alpha="0.5"
+                android:fontFamily="@font/sf_pro_semibold"
+                android:text="@string/give_us_your_rating"
+                android:textColor="@color/bg_btn_blue"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintStart_toStartOf="@id/guidelineStart"
+                app:layout_constraintTop_toBottomOf="@id/txt1" />
+
+            <com.willy.ratingbar.ScaleRatingBar
+                android:id="@+id/simpleRatingBar"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_20sdp"
+
+                app:layout_constraintStart_toStartOf="@id/guidelineStart"
+                app:layout_constraintTop_toBottomOf="@id/txt2"
+                app:srb_clearRatingEnabled="true"
+                app:srb_clickable="true"
+                app:srb_numStars="5"
+                app:srb_rating="3"
+                app:srb_scrollable="false"
+                app:srb_starHeight="30dp"
+                app:srb_starPadding="5dp"
+                app:srb_starWidth="30dp"
+                app:srb_stepSize="1" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txt3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_40sdp"
+                android:fontFamily="@font/sf_pro_bold"
+                android:text="@string/give_us_feedback"
+                android:textColor="@color/bg_btn_blue"
+                android:textSize="@dimen/_18ssp"
+                app:layout_constraintStart_toStartOf="@id/guidelineStart"
+                app:layout_constraintTop_toBottomOf="@id/simpleRatingBar" />
+
+            <com.skydoves.powerspinner.PowerSpinnerView
+                android:id="@+id/spinnerType"
+                style="@style/PowerSpinnerStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_marginBottom="@dimen/_8sdp"
+                android:background="@null"
+                android:hint="@string/suggestion"
+                app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+                app:layout_constraintStart_toStartOf="@id/guidelineStart"
+                app:layout_constraintTop_toBottomOf="@id/txt3" />
+
+            <View
+                android:id="@+id/vLine"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_1sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:background="@color/black"
+                app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+                app:layout_constraintStart_toStartOf="@id/guidelineStart"
+                app:layout_constraintTop_toBottomOf="@id/spinnerType" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txt4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_14sdp"
+                android:fontFamily="@font/sf_pro_bold"
+                android:text="@string/write_your_comment"
+                android:textColor="@color/bg_btn_blue"
+                android:textSize="@dimen/_10ssp"
+                app:layout_constraintStart_toStartOf="@id/guidelineStart"
+                app:layout_constraintTop_toBottomOf="@id/vLine" />
+
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/etMessage"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_4sdp"
+                android:layout_marginTop="@dimen/_6sdp"
+                android:background="@drawable/bg_location"
+                android:fontFamily="@font/sf_pro_regular"
+                android:gravity="top"
+                android:hint="@string/message"
+                android:inputType="textMultiLine"
+                android:lines="4"
+                android:maxLength="120"
+                android:padding="@dimen/_8sdp"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+                app:layout_constraintStart_toStartOf="@id/guidelineStart"
+                app:layout_constraintTop_toBottomOf="@id/txt4" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txt5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_marginEnd="@dimen/_8sdp"
+                android:fontFamily="@font/sf_pro_bold"
+                android:text="@string/_120_words"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_8ssp"
+                app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+                app:layout_constraintTop_toBottomOf="@id/etMessage" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnSend"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_45sdp"
+                android:layout_marginHorizontal="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_14sdp"
+                android:fontFamily="@font/sf_pro_semibold"
+                android:paddingHorizontal="@dimen/_30sdp"
+                android:text="@string/send"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_12ssp"
+                app:backgroundTint="@color/bg_btn_blue"
+                app:cornerRadius="@dimen/_8sdp"
+                app:layout_constraintBottom_toBottomOf="@id/guidelineBottom"
+                app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+                app:layout_constraintTop_toBottomOf="@id/txt5"
+                app:layout_constraintVertical_bias="0" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>

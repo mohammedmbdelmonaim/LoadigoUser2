@@ -1,9 +1,12 @@
 package com.mywork.loadigouser.model.remote.response.user
 
 import android.annotation.SuppressLint
+import android.os.Parcelable
 import androidx.recyclerview.widget.DiffUtil
 import com.google.gson.annotations.SerializedName
+import kotlinx.android.parcel.Parcelize
 
+@Parcelize
 class Service (
     @SerializedName("id")
     val id: Int? = null,
@@ -22,7 +25,7 @@ class Service (
 
     @SerializedName("created_at")
     val created_at: String? = null
-){
+):Parcelable{
     companion object {
         var itemCallback: DiffUtil.ItemCallback<Service> =
             object :

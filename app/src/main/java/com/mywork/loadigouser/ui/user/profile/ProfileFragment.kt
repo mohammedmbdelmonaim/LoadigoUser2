@@ -40,6 +40,8 @@ import javax.inject.Inject
 class ProfileFragment : BaseFragment() {
     private var _binding: FragmentProfileBinding? = null
     private val binding get() = _binding!!
+    @Inject
+    lateinit var user: User
 
     private lateinit var navController: NavController
     private val viewModel: ProfileViewModel by viewModels()
@@ -91,6 +93,26 @@ class ProfileFragment : BaseFragment() {
         binding.tvDeliveryAddresses.setOnClickListener {
             navController.navigate(R.id.action_profileFragment_to_mapFragment)
         }
+
+        binding.tvNotifications.setOnClickListener {
+            navController.navigate(R.id.action_profileFragment_to_notificationsFragment)
+        }
+
+        binding.tvAbout.setOnClickListener {
+            navController.navigate(R.id.action_profileFragment_to_aboutFragment)
+        }
+
+        binding.tvHelp.setOnClickListener {
+            navController.navigate(R.id.action_profileFragment_to_helpFragment)
+        }
+
+        binding.tvContact.setOnClickListener {
+            navController.navigate(R.id.action_profileFragment_to_contactUsFragment)
+        }
+
+        binding.tvRate.setOnClickListener {
+            navController.navigate(R.id.action_profileFragment_to_feedBackFragment)
+        }
     }
 
     @RequiresApi(Build.VERSION_CODES.M)
@@ -119,7 +141,7 @@ class ProfileFragment : BaseFragment() {
         (activity as UserActivity).binding.iHeader.tvTitle.text = getString(R.string.profile)
         (activity as UserActivity).binding.iHeader.btnBack.visibility = View.VISIBLE
         (activity as UserActivity).binding.iHeader.clHeader.visibility = View.VISIBLE
-        (activity as UserActivity).binding.iHeader.btnBell.visibility = View.VISIBLE
+        (activity as UserActivity).binding.iHeader.btnBell.visibility = View.GONE
     }
 
 

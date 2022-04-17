@@ -2,14 +2,20 @@ package com.mywork.loadigouser.ui.user.map
 
 import android.Manifest
 import android.annotation.SuppressLint
+import android.content.Context
+import android.content.Context.LOCATION_SERVICE
+import android.content.Intent
 import android.location.Address
 import android.location.Geocoder
+import android.location.LocationManager
 import android.os.Build
 import android.os.Bundle
+import android.provider.Settings
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.WindowManager
+import androidx.core.content.ContextCompat.getSystemService
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
@@ -31,6 +37,7 @@ import com.mywork.loadigouser.databinding.FragmentFuelBinding
 import com.mywork.loadigouser.databinding.FragmentMainBinding
 import com.mywork.loadigouser.databinding.FragmentMapBinding
 import com.mywork.loadigouser.model.locale.User
+import com.mywork.loadigouser.ui.dialogs.ConfirmInfoDialog
 import com.mywork.loadigouser.ui.user.UserActivity
 import com.mywork.loadigouser.ui.user.main.MainViewModel
 import com.mywork.loadigouser.ui.user.main.ServicesAdapter
@@ -39,6 +46,7 @@ import com.mywork.loadigouser.util.extensions.checkGPSEnabledAndShowRationale
 import com.vmadalin.easypermissions.EasyPermissions
 import com.vmadalin.easypermissions.dialogs.SettingsDialog
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import java.util.*
 import javax.inject.Inject
@@ -46,9 +54,12 @@ import javax.inject.Inject
 @AndroidEntryPoint
 class MapFragment : BaseFragment(), OnMapReadyCallback,
     GoogleMap.OnCameraIdleListener, GoogleMap.OnCameraMoveListener,
-    EasyPermissions.PermissionCallbacks {
+    EasyPermissions.PermissionCallbacks, EasyPermissions.RationaleCallbacks {
     private var _binding: FragmentMapBinding? = null
     private val binding get() = _binding!!
+
+    @Inject
+    lateinit var user: User
 
     private lateinit var navController: NavController
     private val viewModel: MainViewModel by viewModels()
@@ -127,11 +138,14 @@ class MapFragment : BaseFragment(), OnMapReadyCallback,
         super.onResume()
 
         when (args.locationType) {
-            LocationType.PICK.type -> (activity as UserActivity).binding.iHeader.tvTitle.text = getString(R.string.pickup_location)
-            LocationType.PICK.type -> (activity as UserActivity).binding.iHeader.tvTitle.text = getString(
-                R.string.delivery_location
-            )
-            else -> (activity as UserActivity).binding.iHeader.tvTitle.text = getString(R.string.address_book)
+            LocationType.PICK.type -> (activity as UserActivity).binding.iHeader.tvTitle.text =
+                getString(R.string.pickup_location)
+            LocationType.PICK.type -> (activity as UserActivity).binding.iHeader.tvTitle.text =
+                getString(
+                    R.string.delivery_location
+                )
+            else -> (activity as UserActivity).binding.iHeader.tvTitle.text =
+                getString(R.string.address_book)
         }
         (activity as UserActivity).binding.iHeader.btnBack.visibility = View.VISIBLE
         (activity as UserActivity).binding.iHeader.clHeader.visibility = View.VISIBLE
@@ -147,16 +161,67 @@ class MapFragment : BaseFragment(), OnMapReadyCallback,
         mGoogleMap = googleMap
         mGoogleMap.mapType = GoogleMap.MAP_TYPE_NORMAL
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            requireContext().checkGPSEnabledAndShowRationale()
+            if (checkGPSEnabledAndShowRationale()) {
+                    if (hasPermissions())
+                        getCurrentLocation()
+                    else
+                        requestPermissions()
+            }
         }
 
-        if (hasPermissions())
-            getCurrentLocation()
-        else
-            requestPermissions()
+
 
         mGoogleMap.setOnCameraMoveListener(this)
         mGoogleMap.setOnCameraIdleListener(this)
+    }
+
+    private fun checkGPSEnabledAndShowRationale(): Boolean {
+        var manager: LocationManager =
+            requireContext().getSystemService(LOCATION_SERVICE) as LocationManager
+        val isEnabled = manager.isProviderEnabled(LocationManager.GPS_PROVIDER)
+
+        if (isEnabled.not()) {
+            ConfirmInfoDialog(
+                context = requireContext(),
+                info = getString(R.string.cannot_access_location),
+                positiveText = getString(R.string.open),
+                showPositiveButton = true,
+                positiveClickAction = {
+                    startActivityForResult(Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS), 5000)
+                },
+                negativeText = getString(R.string.cancel),
+                showNegativeButton = true,
+                negativeClickAction = {
+                    mGoogleMap.uiSettings.isScrollGesturesEnabled = false
+                    requireActivity().window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE)
+                    KeyboardUtils.showSoftKeyboard(requireContext(), binding.tvLocation)
+                    binding.tvLocation.isEnabled = true
+                    binding.tvLocation.setText("")
+                    binding.btnEnterManual.isEnabled = false
+                },
+                isCancelable = false
+            ).show()
+        }
+
+        return isEnabled
+
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (requestCode == 5000) {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                if (checkGPSEnabledAndShowRationale()) {
+                    lifecycleScope.launch {
+                        delay(5000)
+                        if (hasPermissions())
+                            getCurrentLocation()
+                        else
+                            requestPermissions()
+                    }
+                }
+            }
+        }
     }
 
     @SuppressLint("MissingPermission")
@@ -188,11 +253,19 @@ class MapFragment : BaseFragment(), OnMapReadyCallback,
     override fun onPermissionsDenied(requestCode: Int, perms: List<String>) {
         if (EasyPermissions.somePermissionPermanentlyDenied(this, perms)) {
             SettingsDialog.Builder(requireActivity()).build().show()
+        } else {
+            if (hasPermissions())
+                getCurrentLocation()
+            else
+                requestPermissions()
         }
     }
 
     override fun onPermissionsGranted(requestCode: Int, perms: List<String>) {
-        getCurrentLocation()
+        if (hasPermissions())
+            getCurrentLocation()
+        else
+            requestPermissions()
     }
 
 
@@ -206,6 +279,22 @@ class MapFragment : BaseFragment(), OnMapReadyCallback,
         // EasyPermissions handles the request result.
         EasyPermissions.onRequestPermissionsResult(requestCode, permissions, grantResults, this)
     }
+
+
+    override fun onRationaleAccepted(requestCode: Int) {
+        if (hasPermissions())
+            getCurrentLocation()
+        else
+            requestPermissions()
+    }
+
+    override fun onRationaleDenied(requestCode: Int) {
+        if (hasPermissions())
+            getCurrentLocation()
+        else
+            requestPermissions()
+    }
+
 
     override fun onCameraMove() {
         // mGoogleMap.clear()

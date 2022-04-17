@@ -1,6 +1,8 @@
 package com.mywork.loadigouser.model.locale
 
 import com.google.gson.annotations.SerializedName
+import org.jetbrains.annotations.Nullable
+
 
 class User(@SerializedName("id"                  ) var id                : Int?    = null,
            @SerializedName("full_name"           ) var fullName          : String? = null,
