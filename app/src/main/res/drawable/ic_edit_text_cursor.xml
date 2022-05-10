@@ -3,5 +3,5 @@
     <size
         android:width="2dp"
         android:height="32dp" />
-    <solid android:color="@android:color/white" />
+    <solid android:color="@color/bg_btn_blue" />
 </shape>

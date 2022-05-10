@@ -12,7 +12,6 @@ import com.mywork.loadigouser.model.locale.BoardingItem
 import com.mywork.loadigouser.model.locale.SharedPreferenceCache
 import com.mywork.loadigouser.ui.auth.AuthActivity
 import dagger.hilt.android.AndroidEntryPoint
-import io.paysky.yallasuperapp.ui.boarding.BoardingItemsAdapter
 import javax.inject.Inject
 
 @AndroidEntryPoint

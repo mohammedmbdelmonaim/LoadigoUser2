@@ -75,7 +75,7 @@
                 android:layout_width="@dimen/_70sdp"
                 android:layout_height="@dimen/_70sdp"
                 android:layout_marginTop="@dimen/_40sdp"
-                android:src="@mipmap/ic_launcher"
+                android:src="@drawable/loadigo"
                 app:civ_border_color="@color/grey"
                 app:civ_border_width="@dimen/_2sdp"
                 app:layout_constraintEnd_toEndOf="parent"

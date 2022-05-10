@@ -204,7 +204,7 @@
                     android:layout_marginEnd="@dimen/_8sdp"
                     android:background="@null"
                     android:fontFamily="@font/sf_pro_regular"
-                    android:hint="Suggestion"
+                    android:hint="@string/suggestion"
                     android:singleLine="true"
                     android:textColor="@color/black"
                     android:textSize="@dimen/_12ssp"

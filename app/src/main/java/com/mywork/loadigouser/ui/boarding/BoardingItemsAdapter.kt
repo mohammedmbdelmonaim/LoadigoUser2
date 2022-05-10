@@ -1,4 +1,4 @@
-package io.paysky.yallasuperapp.ui.boarding
+package com.mywork.loadigouser.ui.boarding
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

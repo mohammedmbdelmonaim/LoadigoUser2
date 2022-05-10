@@ -12,10 +12,10 @@ plugins {
 
 android {
     compileSdk 32
-                buildFeatures {
-                    dataBinding = true
-                    viewBinding = true
-                }
+    buildFeatures {
+        dataBinding = true
+        viewBinding = true
+    }
 
     defaultConfig {
         applicationId "com.mywork.loadigouser"
@@ -132,7 +132,7 @@ dependencies {
     // Lottie
     implementation("com.airbnb.android:lottie:4.2.2")
 
-    implementation ("io.github.chaosleung:pinview:1.4.4")
+    implementation("io.github.chaosleung:pinview:1.4.4")
 
     // Circle Imageview
     implementation("de.hdodenhof:circleimageview:3.1.0")

@@ -182,6 +182,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/_60sdp"
                 android:background="#80EDB550"
+                android:alpha="0.5"
                 app:layout_constraintBottom_toBottomOf="parent" />
 
             <com.google.android.material.button.MaterialButton

@@ -36,7 +36,7 @@
     <string name="password"> كلمة المرور </string>
     <string name="choose_your_service"> اختر خدمتك </string>
     <string name="insert_correct_otp"> الرجاء إدخال otp الصحيح </string>
-    <string name="sec_left">٪ s ثانية لليسار </string>
+    <string name="sec_left">%s ثانية لليسار </string>
     <string name="permission_string"> هذه الصلاحيات تفعيلها </string>
     <string name="birthdate"> تاريخ الميلاد </string>
     <string name="enter_birth"> أدخل تاريخ ميلادك </string>
@@ -54,7 +54,7 @@
     <string name="logout_msg"> هل أنت متأكد؟ </string>
     <string name="logout"> SingOut </string>
     <string name="cancel"> إلغاء </string>
-    <string name="welcome"> مرحبًا ،٪ s </string>
+    <string name="welcome"> مرحبًا ،%s </string>
     <string name="profile"> الملف الشخصي </string>
     <string name="verified"> تم التحقق منه </string>
     <string name="english"> الإنجليزية </string>
@@ -92,11 +92,11 @@
     <string name="pay_while_drop_a_delivery"> الدفع أثناء إفلات التسليم </string>
     <string name="cash_on_pickup"> النقد عند الاستلام </string>
     <string name="pay_while_pick_a_delivery"> الدفع أثناء اختيار التسليم </string>
-    <string name="amount_to_pay_s_aed"> المبلغ الواجب دفعه -٪ s AED </string>
+    <string name="amount_to_pay_s_aed"> المبلغ الواجب دفعه - %s AED </string>
     <string name="pickup_by"> التقاط بواسطة </string>
-    <string name="s_s">٪ s٪ s </string>
-    <string name="order_id_s"> معرف الطلب -٪ s </string>
-    <string name="expected_delivery_s"> التسليم المتوقع٪ s </string>
+    <string name="s_s">%s %s</string>
+    <string name="order_id_s"> معرف الطلب - %s </string>
+    <string name="expected_delivery_s"> التسليم المتوقع %s </string>
     <string name="searching_driver"> جاري البحث عن سائق .... </string>
     <string name="pickup_point"> نقطة الالتقاط </string>
     <string name="delivery_point"> نقطة التسليم </string>
@@ -104,8 +104,8 @@
     <string name="track_your_order"> تتبع طلبك </string>
     <string name="your_order_n_placed_successfully"> تم تقديم طلبك بنجاح </string>
     <string name="no_orders"> لا توجد طلبات </string>
-    <string name="order_no_s"> رقم الطلب - #٪ s </string>
-    <string name="currency">٪ s AED </string>
+    <string name="order_no_s"> رقم الطلب - #%s </string>
+    <string name="currency">%s AED </string>
     <string name="wallet"> المحفظة </string>
     <string name="saved_card"> البطاقة المحفوظة </string>
     <string name="add_new_card"> + إضافة بطاقة جديدة </string>
@@ -149,4 +149,6 @@
     <string name="how_do_you_feel"> ما هو شعورك؟ </string>
     <string name="give_us_feedback"> أعطنا ملاحظاتك </string>
     <string name="cannot_access_location">لا يمكن الوصول إلى موقعك ، يرجى فتح موقعك من إعدادات الجهاز</string>
+    <string name = "delivery_your_items_anywhere_you_want">Delivery your items to anywhere you want</string>
+
 </resources>

@@ -165,7 +165,7 @@
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnSignIn"
                 style="@style/Widget.MaterialComponents.Button.TextButton"
-                android:layout_width="@dimen/_60sdp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/_30sdp"
                 android:fontFamily="@font/sf_pro_semibold"
@@ -183,6 +183,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/_60sdp"
                 android:background="#80EDB550"
+                android:alpha="0.5"
                 app:layout_constraintBottom_toBottomOf="parent" />
 
             <com.google.android.material.button.MaterialButton

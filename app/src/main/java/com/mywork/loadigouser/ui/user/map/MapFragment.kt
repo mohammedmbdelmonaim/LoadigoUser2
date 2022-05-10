@@ -226,6 +226,7 @@ class MapFragment : BaseFragment(), OnMapReadyCallback,
 
     @SuppressLint("MissingPermission")
     private fun getCurrentLocation() {
+        mGoogleMap.isMyLocationEnabled = true
         mFusedLocationClient?.lastLocation?.addOnCompleteListener {
             latitude = it.result.latitude
             longitude = it.result.longitude

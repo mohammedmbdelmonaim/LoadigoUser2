@@ -45,7 +45,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.45" />
+            app:layout_constraintGuide_begin="329dp" />
 
         <View
             android:id="@+id/view"
@@ -62,7 +62,8 @@
             android:fontFamily="@font/sf_pro_semibold"
             android:text="@string/we_have_sent_otp_on_your_register_mobile_number"
             android:layout_marginBottom="@dimen/_50sdp"
-            android:textSize="@dimen/_18ssp"
+            android:textSize="@dimen/_14ssp"
+            android:gravity="center"
             android:textColor="@color/white"
             android:textAlignment="center"
             app:layout_constraintStart_toStartOf="@id/guidelineStart"
@@ -78,6 +79,7 @@
             android:fontFamily="@font/sf_pro_bold"
             android:text="@string/verification"
             android:textAlignment="center"
+            android:gravity="center"
             android:textColor="@color/white"
             android:textSize="@dimen/_18ssp"
             app:layout_constraintBottom_toTopOf="@id/txt_otp"
@@ -100,7 +102,7 @@
             android:textColorHint="@color/black"
             android:textSize="@dimen/_16ssp"
             android:textStyle="bold"
-            app:cursorColor="@color/white"
+            app:cursorColor="@color/bg_btn"
             app:cursorWidth="1dp"
             app:hideLineWhenFilled="true"
             app:itemCount="4"
@@ -113,9 +115,9 @@
             app:layout_constraintStart_toStartOf="@id/guidelineStart"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.46"
-            app:lineWidth="10dp"
-            app:lineColor="#fff"
-            app:viewType="rectangle" />
+            app:lineWidth="@dimen/_2sdp"
+            app:lineColor="@color/gray_light4"
+            app:viewType="none" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tvTimer"

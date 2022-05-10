@@ -24,6 +24,7 @@
         <entry key="..\:/Users/PS-701/AndroidStudioProjects/LoadigoUser/app/src/main/res/drawable/bg_verify.xml" value="0.17135416666666667" />
         <entry key="..\:/Users/PS-701/AndroidStudioProjects/LoadigoUser/app/src/main/res/drawable/bg_warning_large_radius.xml" value="0.14635416666666667" />
         <entry key="..\:/Users/PS-701/AndroidStudioProjects/LoadigoUser/app/src/main/res/drawable/horizontal_discrete_line.xml" value="0.2703125" />
+        <entry key="..\:/Users/PS-701/AndroidStudioProjects/LoadigoUser/app/src/main/res/drawable/ic_arrow_down.xml" value="0.18385416666666668" />
         <entry key="..\:/Users/PS-701/AndroidStudioProjects/LoadigoUser/app/src/main/res/drawable/ic_arrow_right_circle.xml" value="0.2703125" />
         <entry key="..\:/Users/PS-701/AndroidStudioProjects/LoadigoUser/app/src/main/res/drawable/ic_back.xml" value="0.14635416666666667" />
         <entry key="..\:/Users/PS-701/AndroidStudioProjects/LoadigoUser/app/src/main/res/drawable/ic_bell.xml" value="0.14635416666666667" />
@@ -78,10 +79,10 @@
         <entry key="..\:/Users/PS-701/AndroidStudioProjects/LoadigoUser/app/src/main/res/layout/fragment_otp.xml" value="0.37203495630461925" />
         <entry key="..\:/Users/PS-701/AndroidStudioProjects/LoadigoUser/app/src/main/res/layout/fragment_payment.xml" value="0.2" />
         <entry key="..\:/Users/PS-701/AndroidStudioProjects/LoadigoUser/app/src/main/res/layout/fragment_pick_delivery.xml" value="0.264" />
-        <entry key="..\:/Users/PS-701/AndroidStudioProjects/LoadigoUser/app/src/main/res/layout/fragment_pickup_payment.xml" value="0.3199498117942284" />
+        <entry key="..\:/Users/PS-701/AndroidStudioProjects/LoadigoUser/app/src/main/res/layout/fragment_pickup_payment.xml" value="0.4426229508196721" />
         <entry key="..\:/Users/PS-701/AndroidStudioProjects/LoadigoUser/app/src/main/res/layout/fragment_profile.xml" value="0.264" />
         <entry key="..\:/Users/PS-701/AndroidStudioProjects/LoadigoUser/app/src/main/res/layout/fragment_referral.xml" value="0.16304347826086957" />
-        <entry key="..\:/Users/PS-701/AndroidStudioProjects/LoadigoUser/app/src/main/res/layout/fragment_register.xml" value="0.136" />
+        <entry key="..\:/Users/PS-701/AndroidStudioProjects/LoadigoUser/app/src/main/res/layout/fragment_register.xml" value="0.264" />
         <entry key="..\:/Users/PS-701/AndroidStudioProjects/LoadigoUser/app/src/main/res/layout/fragment_success.xml" value="0.16304347826086957" />
         <entry key="..\:/Users/PS-701/AndroidStudioProjects/LoadigoUser/app/src/main/res/layout/fragment_two_truck.xml" value="0.264" />
         <entry key="..\:/Users/PS-701/AndroidStudioProjects/LoadigoUser/app/src/main/res/layout/general_loading_indicator.xml" value="0.13020833333333334" />

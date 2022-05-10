@@ -71,9 +71,7 @@ class ProfileFragment : BaseFragment() {
                     R.string.arabic)
 
         binding.tvLogout.setOnClickListener {
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                 logoutDialog()
-            }
         }
         binding.tvLanguage.setOnClickListener {
             val bottomLangsSheet: BottomSheetLanguage = BottomSheetLanguage
